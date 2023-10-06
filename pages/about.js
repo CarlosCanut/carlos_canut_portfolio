@@ -5,7 +5,6 @@ import { Scroll, ScrollControls, Html, Environment, Instances, Instance, MeshTra
 import { Canvas, useFrame, useThree, extend } from '@react-three/fiber'
 import { motion } from 'framer-motion'
 import path from 'path'
-import { promises as fs } from 'fs'
 import { Bloom, EffectComposer } from '@react-three/postprocessing'
 import { LayerMaterial, Color, Depth, Displace, Fresnel } from 'lamina'
 import { useRef } from 'react'
@@ -20,40 +19,6 @@ import Image from 'next/image'
 import { TitleText3d } from '../components/TitleText3d'
 import { AboutSection } from '../components/AboutSection'
 
-const LoaderContext = createContext()
-
-function LoaderProvider ({ children }) {
-  const [active, setActive] = useState(false)
-  const value = useMemo(() => ({ active, setActive }), [active, setActive])
-  return (
-    <LoaderContext.Provider value={value}>
-      {children}
-    </LoaderContext.Provider>
-  )
-}
-
-function Loader () {
-  const { active } = useContext(LoaderContext)
-  const [percent, setPercent] = useState(0)
-
-  useEffect(() => {
-    setTimeout(() => {
-      setPercent(percent => (percent < 100 ? percent + 10 : 100))
-    }, 200)
-  })
-  return active ? <Html><div className='text-6xl text-start text-white font-ExconMedium font-light'>{percent}</div></Html> : null
-}
-
-function LoaderFallback () {
-  const { setActive } = useContext(LoaderContext)
-
-  useEffect(() => {
-    setActive(true)
-    return () => setActive(false)
-  })
-  return null
-}
-
 
 export default function About () {
   const [menuOpened, setMenuOpened] = useState(false)
@@ -61,10 +26,8 @@ export default function About () {
 
   return (
     <>
-      <LoaderProvider>
-        <Suspense fallback={<LoaderFallback />}>
-          <Canvas shadows orthographic  camera={{ position: [0, 0, 100], zoom: 100 }} className='-z-2'>
-          <Loader />
+        <Canvas shadows orthographic  camera={{ position: [0, 0, 100], zoom: 100 }} className='-z-2'>
+            <Suspense fallback={<></>}>
           <ScrollControls pages={4} damping={0.1}>
             {/* This elements won't scroll */}            
             <Scroll>
@@ -146,9 +109,8 @@ export default function About () {
               </section>
             </Scroll>
           </ScrollControls>
-          </Canvas>
-        </Suspense>
-      </LoaderProvider>
+            </Suspense>
+        </Canvas>
     </>
   )
 }

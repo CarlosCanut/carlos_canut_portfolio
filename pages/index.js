@@ -5,7 +5,6 @@ import { Scroll, ScrollControls, Html, Environment, Instances, Instance, MeshTra
 import { Canvas, useFrame, useThree, extend } from '@react-three/fiber'
 import { motion } from 'framer-motion'
 import path from 'path'
-import { promises as fs } from 'fs'
 import { Bloom, EffectComposer } from '@react-three/postprocessing'
 import { LayerMaterial, Color, Depth, Displace, Fresnel } from 'lamina'
 import { useRef } from 'react'
@@ -20,62 +19,16 @@ import Image from 'next/image'
 import { TitleText3d } from '../components/TitleText3d'
 import { AboutSection } from '../components/AboutSection'
 
-const LoaderContext = createContext()
 
-function LoaderProvider ({ children }) {
-  const [active, setActive] = useState(false)
-  const value = useMemo(() => ({ active, setActive }), [active, setActive])
-  return (
-    <LoaderContext.Provider value={value}>
-      {children}
-    </LoaderContext.Provider>
-  )
-}
 
-function Loader () {
-  const { active } = useContext(LoaderContext)
-  const [percent, setPercent] = useState(0)
-
-  useEffect(() => {
-    setTimeout(() => {
-      setPercent(percent => (percent < 100 ? percent + 10 : 100))
-    }, 200)
-  })
-  return active ? <Html><div className='text-6xl text-start text-white font-ExconMedium font-light bg-background'>{percent}</div></Html> : null
-}
-
-function LoaderFallback () {
-  const { setActive } = useContext(LoaderContext)
-
-  useEffect(() => {
-    setActive(true)
-    return () => setActive(false)
-  })
-  return null
-}
-
-export async function getStaticProps ({ locale }) {
-  const jsonDirectory = path.join(process.cwd(), 'translations')
-  const translationsRaw = await fs.readFile(jsonDirectory + `/${locale}.json`, 'utf8')
-  const translations = JSON.parse(translationsRaw)
-
-  return {
-    props: {
-      translations
-    }
-  }
-}
-
-export default function Home ({ translations }) {
+export default function Home () {
   const [menuOpened, setMenuOpened] = useState(false)
   const { range } = { value: 200, min: 150, max: 300, step: 10 }
 
   return (
     <>
-      <LoaderProvider>
         <Canvas shadows orthographic  camera={{ position: [0, 0, 100], zoom: 100 }} className='-z-2'>
-          <Suspense fallback={<LoaderFallback />}>
-          <Loader />
+          <Suspense fallback={<></>}>
           <ScrollControls pages={4} damping={0.1}>
             {/* This elements won't scroll */}            
             <Scroll>
@@ -156,7 +109,6 @@ export default function Home ({ translations }) {
           </ScrollControls>
           </Suspense>
         </Canvas>
-      </LoaderProvider>
     </>
   )
 }
