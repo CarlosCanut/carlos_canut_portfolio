@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import './excon.css';
+@import './jet-brains-mono.css';
+
+
+@layer base {
+    html {
+        font-family: Excon-Medium;
+    }
+}
