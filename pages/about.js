@@ -54,19 +54,8 @@ function LoaderFallback () {
   return null
 }
 
-export async function getStaticProps ({ locale }) {
-  const jsonDirectory = path.join(process.cwd(), 'translations')
-  const translationsRaw = await fs.readFile(jsonDirectory + `/${locale}.json`, 'utf8')
-  const translations = JSON.parse(translationsRaw)
 
-  return {
-    props: {
-      translations
-    }
-  }
-}
-
-export default function About ({ translations }) {
+export default function About () {
   const [menuOpened, setMenuOpened] = useState(false)
   const { range } = { value: 200, min: 150, max: 300, step: 10 }
 
