@@ -7,6 +7,7 @@
 
 @layer base {
     html {
-        font-family: Excon-Medium;
+        font-family: Brockmann;
+        background-color: #070B1B;
     }
 }

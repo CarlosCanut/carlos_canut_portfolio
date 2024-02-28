@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import HeadMenu from './HeadMenu';
+import AnimatedTitle from './AnimatedTitle';
 
 const Layout = ({ children }) => {
   return (

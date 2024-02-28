@@ -3,7 +3,7 @@ import { Suspense, createContext, useContext, useEffect, useMemo, useState } fro
 import * as THREE from 'three'
 import { Scroll, ScrollControls, Html, Environment, Instances, Instance, MeshTransmissionMaterial, Lightformer, Float, Points, PointMaterial, MeshDistortMaterial, Sphere, OrbitControls, Center, Text3D, Plane, Sparkles, SpotLight } from '@react-three/drei'
 import { Canvas, useFrame, useThree, extend } from '@react-three/fiber'
-import { motion } from 'framer-motion'
+import { motion, useScroll, useSpring } from 'framer-motion'
 import path from 'path'
 import { Bloom, EffectComposer } from '@react-three/postprocessing'
 import { LayerMaterial, Color, Depth, Displace, Fresnel } from 'lamina'
@@ -18,26 +18,43 @@ import { SphereShaderMaterial } from '../components/Sphere'
 import Image from 'next/image'
 import { TitleText3d } from '../components/TitleText3d'
 import { AboutSection } from '../components/AboutSection'
+import AnimatedTitle from '../components/AnimatedTitle'
+import { useRouter } from 'next/router'
+import { ProjectCard } from '../components/ProjectCard'
+import HeadMenuExtra from '../components/HeadMenuExtra'
 
 
+const AnimatedMaterial = a(MeshDistortMaterial)
 
 export default function Home () {
+  const router = useRouter()
+  
   const [menuOpened, setMenuOpened] = useState(false)
   const { range } = { value: 200, min: 150, max: 300, step: 10 }
+
+
+  const scrollProgressY = useScroll()
+  const scaleX = useSpring(scrollProgressY, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  })
 
   return (
     <>
         <Canvas shadows orthographic  camera={{ position: [0, 0, 100], zoom: 100 }} className='-z-2'>
           <Suspense fallback={<></>}>
-          <ScrollControls pages={4} damping={0.1}>
+          <ScrollControls pages={6} damping={0.1}>
             {/* This elements won't scroll */}            
             <Scroll>
               <ambientLight intensity={0.5} />
               <directionalLight position={[10, 10, 10]} castShadow />
               <Environment files='https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/industrial_workshop_foundry_1k.hdr' />
               
-              <Blob position={[3.5, 0, 0]} />
-              <TitleText3d position={[0, -6, 0]} >
+              {/* <Blob x={4} y={1.5} />
+              <Blob x={-4} y={-1.5} /> */}
+              {/* <Ball /> */}
+              <TitleText3d position={[0.4, -7, 0]} >
                 PROJECTS
               </TitleText3d>
               {/* <TitleText3d position={[0, -24, 0]} >
@@ -48,61 +65,66 @@ export default function Home () {
               </EffectComposer>
             </Scroll>
             <Scroll html>
-              <section className='absolute flex w-[90vw] h-screen justify-start items-center mx-[5vw]'>
-                <h1 className='font-Spinnaker text-4xl sm:text-5xl md:text-7xl '>DATA ANALYST &<br/> WEB DEVELOPER</h1>
-              </section>
-              <section className='absolute flex flex-col top-[200vh] w-[100vw] h-[100vh] items-start my-[10vh]'>
-                {/* <div className='flex flex-row w-full text-xl mx-[5vw]'>
-                  <h3>02/</h3>
-                  <h2 className='mx-auto'>RECENT PROJECTS</h2>
-                </div> */}
-                <div className='w-full h-[80vh] flex flex-row place-content-between'>
-                  
-                  {/* First card */}
-                  <ul className='h-full w-[10vw] flex flex-col justify-end p-8 gap-4 text-2xl'>
-                    <li className='opacity-100'>SOLEADO</li>
-                    <li className='opacity-50'>NOCTURNO</li>
-                    <li className='opacity-50'>SCOUTEX</li>
-                  </ul>
-
-                  {/* Second card */}
-                  <div className='h-full w-[65vw] flex flex-col'>
-                    <div className='flex flex-row mb-2 items-end gap-4'>
-                      <h2 className='text-6xl font-extrabold'>SOLEADO</h2>
-                      <h4 className='font-extralight'>INSTAGRAM</h4>
-                    </div>
-                    <img src='/gallery_image.png' alt='gallery image placeholder' className='w-full h-[80vh]' />
-                    <div className="flex">
-                      <div className="flex gap-x-10 flex-1">
-                        <div>LANDING PAGE</div>
-                      </div>
-                      <div className="flex-initial opacity-50 font-300">
-                        TRAVEL
-                      </div>
-                      <div className="flex-1 justify-end flex">
-                        <div>01 </div>
-                        <div className='opacity-50'> - 03</div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  {/* Third card */}
-                  <div className='h-full w-[10vw] flex flex-col'>
-                    <div className='flex flex-row mb-2 items-end gap-2'>
-                      <h4>NEXT</h4>
-                    </div>
-                    <img src='/gallery_image.png' alt='gallery image placeholder' className='w-full h-[80vh]' />
-                    <div className="flex">
-                      <div className="flex-1 justify-start flex">
-                        <div>SOLEADO</div>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
+              <HeadMenuExtra />
+              <section className='absolute flex flex-col w-[90vw] h-screen justify-center items-center mx-[5vw]'>
+                <motion.div className='fixed top-0 left-0 right-0 h-2 bg-text [transform-origin: 0%]' style={{ scaleX }} />
+                {/* <h1 className='font-ExconBold text-4xl sm:text-5xl md:text-9xl self-start font-bold'>SOFTWARE</h1> */}
+                <motion.div
+                  className='flex flex-col w-full h-full items-center justify-center'
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 1, ease: [0.2, 0.65, 0.3, 0.9] }}
+                >
+                  <AnimatedTitle
+                    text="SOFTWARE"
+                    className="font-ExconBold text-4xl sm:text-9xl md:text-9xl self-start font-bold bg-gradient-to-r from-text via-secondary to-accent bg-clip-text text-transparent"
+                  />
+                  {/* <h1 className='font-ExconBold text-4xl sm:text-5xl md:text-9xl self-end font-bold'>DEVELOPER</h1> */}
+                  <AnimatedTitle
+                    text="DEVELOPER"
+                    className="font-ExconBold text-4xl sm:text-9xl md:text-9xl self-end font-bold"
+                  />
+                </motion.div>
               </section>
 
-              <section className='absolute flex flex-col top-[300vh] w-[90vw] h-[90vh] items-start mx-[5vw] my-[5vh] border-2 rounded-xl p-2'>
+              <section className='absolute flex flex-col top-[200vh] w-[100vw] h-[100vh] items-center hover:ease-in'>
+                <motion.div 
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 1, ease: [0.2, 0.65, 0.3, 0.9] }} 
+                  className='w-full h-[80vh] flex flex-row justify-start ml-[10vw]'
+                >
+                  <ProjectCard title={'ENSO'} onClick={() => router.push('/projects/enso')} image_url={'/images/enso.png'} />                  
+                </motion.div>
+              </section>
+
+              <section className='absolute flex flex-col top-[300vh] w-[100vw] h-[100vh] items-center'>
+                <motion.div 
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 1, ease: [0.2, 0.65, 0.3, 0.9] }} 
+                  className='w-full h-[80vh] flex flex-row justify-end mr-[10vw]'
+                >
+                  <ProjectCard title={'SCOUTEX'} onClick={() => router.push('/projects/scoutex')} image_url={'/images/scoutex.png'} />
+                </motion.div>
+              </section>
+
+              <section className='absolute flex flex-col top-[400vh] w-[100vw] h-[100vh] items-center'>
+                <motion.div 
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 1, ease: [0.2, 0.65, 0.3, 0.9] }} 
+                  className='w-full h-[80vh] flex flex-row justify-start ml-[10vw]'
+                >
+                  <ProjectCard title={'LOLPICKS'} onClick={() => router.push('/projects/lolpicks')} image_url={'/images/lolpicks.png'} />
+                </motion.div>
+              </section>
+
+              <section className='absolute flex flex-col top-[500vh] w-[90vw] h-[90vh] items-start mx-[5vw] my-[5vh] p-2'>
                 <AboutSection />
               </section>
             </Scroll>
@@ -114,7 +136,7 @@ export default function Home () {
 }
 
 
-function Blob () {
+function Blob ({ x = 4, y = 0, ...props }) {
   const { size } = useThree()
   var ref = useRef(null);
   var rand = useMemo(function () { return Math.random(); }, []);
@@ -133,10 +155,10 @@ function Blob () {
   });
   
   return (
-    <group position={[(size.width/100)/4, 0, 0]}>
+    <group position={[(size.width/100)/x, y, 0]}>
       <Sphere
-        castShadow
-        args={[Math.max(((size.width/100)/6),1.25), 500, 500]}
+        castShadow={false}
+        args={[Math.max(((size.width/100)/12),1.25), 500, 500]}
         onPointerEnter={() => (strength.current = 0.2)}
         onPointerLeave={() => (strength.current = 0)}
         onPointerDown={() => (strength.current = 0.2)}
@@ -169,6 +191,24 @@ function Blob () {
 
         </LayerMaterial>
       </Sphere>
+    </group>
+  )
+}
+
+function Ball () {
+  const { size } = useThree()
+  var ref = useRef(null);
+  var rand = useMemo(function () { return Math.random(); }, []);
+  var strength = useRef(0);
+  var displaceRef = useRef(null);
+
+  return (
+    <group position={[(size.width/100)/4, 0, 0]}>
+      <sphereBufferGeometry 
+        args={[Math.max(((size.width/100)/6),1.25), 500, 500]}
+        castShadow={false} 
+      />
+      <AnimatedMaterial color='#181818' envMapIntensity={0.4} clearcoat={0.04} clearcoatRoughness={0} metalness={0.1} />
     </group>
   )
 }
