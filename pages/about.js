@@ -176,7 +176,7 @@ export default function About () {
                 </div>
               </section>
 
-              <section className='absolute flex flex-col top-[300vh] w-[90vw] h-[90vh] items-start mx-[5vw] my-[5vh] p-2'>
+              <section className='absolute flex flex-col top-[300vh] w-[90vw] h-[90vh] items-start mx-[5vw] my-[5vh] py-2'>
                 <div className='w-full border-t-2 flex flex-col pt-4 pb-20'>
                     {/* <h2 className='h-full w-1/3'>SKILLSET</h2> */}
                     <AnimatedTitle
@@ -222,7 +222,7 @@ export default function About () {
                 </div>
               </section>
 
-              <section className='absolute flex flex-col top-[400vh] w-[90vw] h-[90vh] items-start mx-[5vw] my-[5vh] p-2'>
+              <section className='absolute flex flex-col top-[400vh] w-[90vw] h-[90vh] items-start mx-[5vw] my-[5vh]'>
                 <AboutSection />
               </section>
             </Scroll>

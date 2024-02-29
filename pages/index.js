@@ -96,7 +96,7 @@ export default function Home () {
                   transition={{ duration: 1, ease: [0.2, 0.65, 0.3, 0.9] }} 
                   className='w-full h-[80vh] flex flex-row justify-start ml-[10vw]'
                 >
-                  <ProjectCard title={'ENSO'} onClick={() => router.push('/projects/enso')} image_url={'/images/enso.png'} />                  
+                  <ProjectCard title={'ENSO'} onClick={() => router.push('/projects/enso')} image_url={'/images/enso/enso.png'} />                  
                 </motion.div>
               </section>
 
@@ -108,7 +108,7 @@ export default function Home () {
                   transition={{ duration: 1, ease: [0.2, 0.65, 0.3, 0.9] }} 
                   className='w-full h-[80vh] flex flex-row justify-end mr-[10vw]'
                 >
-                  <ProjectCard title={'SCOUTEX'} onClick={() => router.push('/projects/scoutex')} image_url={'/images/scoutex.png'} />
+                  <ProjectCard title={'SCOUTEX'} onClick={() => router.push('/projects/scoutex')} image_url={'/images/scoutex/scoutex.png'} />
                 </motion.div>
               </section>
 
@@ -124,7 +124,7 @@ export default function Home () {
                 </motion.div>
               </section>
 
-              <section className='absolute flex flex-col top-[500vh] w-[90vw] h-[90vh] items-start mx-[5vw] my-[5vh] p-2'>
+              <section className='absolute flex flex-col top-[500vh] w-[90vw] h-[90vh] items-start mx-[5vw] my-[5vh]'>
                 <AboutSection />
               </section>
             </Scroll>

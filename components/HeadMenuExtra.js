@@ -9,8 +9,8 @@ const HeadMenuExtra = () => {
   
   return (
     <>
-      <nav className='z-50 absolute flex w-screen h-[5vh] top-[5vh] right-0 left-0 justify-center'>
-        <ul className='flex flex-row items-start justify-between w-[40vw] left-[20vw]'>
+      <nav className='z-50 absolute flex w-screen h-[5vh] top-[5vh] right-0 left-[25vw] justify-start'>
+        <ul className='flex flex-row items-start justify-between w-[40vw]'>
           <li>
             <div className='order-2 flex-none'>
               <AnimatedTitle

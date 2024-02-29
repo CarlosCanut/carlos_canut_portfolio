@@ -9,7 +9,7 @@ export function AboutSection() {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 1, ease: [0.2, 0.65, 0.3, 0.9] }} 
+                transition={{ duration: 1, ease: [0.2, 0.65, 0.3, 0.9] }}
                 className='flex flex-row w-full my-24'
             >
                 <lu className="w-1/3 list-none text-md font-light">
