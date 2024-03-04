@@ -22,6 +22,7 @@ import AnimatedTitle from '../components/AnimatedTitle'
 import { useRouter } from 'next/router'
 import { ProjectCard } from '../components/ProjectCard'
 import HeadMenuExtra from '../components/HeadMenuExtra'
+import AnimatedText from '../components/AnimatedText'
 
 
 const AnimatedMaterial = a(MeshDistortMaterial)
@@ -66,11 +67,11 @@ export default function Home () {
             </Scroll>
             <Scroll html>
               <HeadMenuExtra />
-              <section className='absolute flex flex-col w-[90vw] h-screen justify-center items-center mx-[5vw]'>
+              <section className='absolute flex flex-row w-[90vw] h-screen justify-center items-center mx-[5vw] gap-8'>
                 <motion.div className='fixed top-0 left-0 right-0 h-2 bg-text [transform-origin: 0%]' style={{ scaleX }} />
                 {/* <h1 className='font-ExconBold text-4xl sm:text-5xl md:text-9xl self-start font-bold'>SOFTWARE</h1> */}
                 <motion.div
-                  className='flex flex-col w-full h-full items-center justify-center'
+                  className='flex flex-col w-[65vw] h-full mt-[100vh] items-start justify-start text-4xl sm:text-8xl md:text-8xl'
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
@@ -78,13 +79,61 @@ export default function Home () {
                 >
                   <AnimatedTitle
                     text="SOFTWARE"
-                    className="font-ExconBold text-4xl sm:text-9xl md:text-9xl self-start font-bold bg-gradient-to-r from-text via-secondary to-accent bg-clip-text text-transparent"
+                    className="font-ExconBold self-start font-bold bg-gradient-to-r from-text via-secondary to-accent bg-clip-text text-transparent"
                   />
-                  {/* <h1 className='font-ExconBold text-4xl sm:text-5xl md:text-9xl self-end font-bold'>DEVELOPER</h1> */}
                   <AnimatedTitle
                     text="DEVELOPER"
-                    className="font-ExconBold text-4xl sm:text-9xl md:text-9xl self-end font-bold"
+                    className="font-ExconBold self-end font-bold"
                   />
+                </motion.div>
+                <motion.div 
+                  className='flex flex-col w-[25vw] h-full mt-[100vh] items-start justify-start text-2xl sm:text-2xl md:text-2xl'
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 1, ease: [0.2, 0.65, 0.3, 0.9] }}
+                >
+                  <motion.h3 
+                    initial={{ opacity: 0, y: -10 }} 
+                    animate={{ opacity: 1, y: 0 }} 
+                    exit={{ opacity: 0, y: -10 }} 
+                    transition={{ duration: 1, ease: [0.2, 0.65, 0.3, 0.9] }} 
+                    className="font-ExconMedium self-start cursor-pointer hover:underline hover:underline-offset-2"
+                    onClick={() => window.open('https://www.linkedin.com/in/carlos-m%C2%AA-canut-dom%C3%ADnguez-06b322181/', '_blank')}
+                  >
+                    LinkedIn
+                  </motion.h3>
+
+                  <motion.h3 
+                    initial={{ opacity: 0, y: -10 }} 
+                    animate={{ opacity: 1, y: 0 }} 
+                    exit={{ opacity: 0, y: -10 }} 
+                    transition={{ duration: 1, ease: [0.2, 0.65, 0.3, 0.9] }} 
+                    className="font-ExconMedium self-start cursor-pointer hover:underline hover:underline-offset-2"
+                    onClick={() => window.open('https://github.com/CarlosCanut', '_blank')}
+                  >
+                    Github
+                  </motion.h3>
+                  <motion.h3 
+                    initial={{ opacity: 0, y: -10 }} 
+                    animate={{ opacity: 1, y: 0 }} 
+                    exit={{ opacity: 0, y: -10 }} 
+                    transition={{ duration: 1, ease: [0.2, 0.65, 0.3, 0.9] }} 
+                    className="font-ExconMedium self-start cursor-pointer hover:underline hover:underline-offset-2"
+                    onClick={() => window.open('https://read.cv/carloscanut', '_blank')}
+                  >
+                    Read.cv
+                  </motion.h3>
+                  <motion.h3 
+                    initial={{ opacity: 0, y: -10 }} 
+                    animate={{ opacity: 1, y: 0 }} 
+                    exit={{ opacity: 0, y: -10 }} 
+                    transition={{ duration: 1, ease: [0.2, 0.65, 0.3, 0.9] }} 
+                    className="font-ExconMedium self-start cursor-pointer hover:underline hover:underline-offset-2"
+                    onClick={() => window.open('carloscanutdominguez@gmail.com', '_blank')}
+                  >
+                    Email
+                  </motion.h3>
                 </motion.div>
               </section>
 

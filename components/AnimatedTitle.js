@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-const AnimatedTitle = ({ text, className }) => {
+const AnimatedTitle = ({ text, className, text_color="text-white" }) => {
   const ctrls = useAnimation();
   const { ref, inView } = useInView({
     threshold: 0.5,
@@ -26,7 +26,7 @@ const AnimatedTitle = ({ text, className }) => {
   const characterAnimation = {
     hidden: {
       opacity: 0,
-      y: `0.25em`,
+      y: `-1em`,
     },
     visible: {
       opacity: 1,
@@ -59,6 +59,7 @@ const AnimatedTitle = ({ text, className }) => {
               aria-hidden="true"
               key={index}
               variants={characterAnimation}
+              className={text_color}
             >
               {character}
             </motion.span>

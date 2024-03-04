@@ -22,11 +22,15 @@ import { Logo } from '../components/Logo'
 import AnimatedText from '../components/AnimatedText'
 import AnimatedTitle from '../components/AnimatedTitle'
 import HeadMenuExtra from '../components/HeadMenuExtra'
+import ExperienceCard from '../components/ExperienceCard'
+import Timeline from '../components/Timeline'
 
 
 export default function About () {
   const [menuOpened, setMenuOpened] = useState(false)
   const { range } = { value: 200, min: 150, max: 300, step: 10 }
+
+
 
   return (
     <>
@@ -37,7 +41,7 @@ export default function About () {
           className='-z-2'
         >
             <Suspense fallback={<></>}>
-          <ScrollControls pages={5} damping={0.1}>
+          <ScrollControls pages={8} damping={0.1}>
             {/* This elements won't scroll */}            
             <Scroll>
               <ambientLight intensity={0.5} />
@@ -83,100 +87,34 @@ export default function About () {
                 </div>
               </section>
 
-              <section className='absolute flex flex-col top-[200vh] w-[90vw] h-[200vh] items-start mx-[5vw] '>
+              <section className='absolute flex flex-col top-[175vh] w-[90vw] h-[200vh] items-start mx-[5vw] '>
 
-                <div className='w-full border-t-2 flex flex-row pt-4 pb-20'>
-                    {/* <h2 className='h-full w-1/3'>EXPERIENCE</h2> */}
+                <div className='w-full border-t-2 flex flex-col pt-4 pb-20'>
                     <AnimatedTitle
                       text={"EXPERIENCE"}
                       className={'h-full w-1/3'}
                     />
-                    <div className='h-full w-2/3 pt-4'>
+                    <div className='h-full w-2/3 flex flex-row pt-4'>
                         {/* esports team list */}
-                        <ul className='flex flex-col gap-24'>
-                            <li className='flex flex-row'>
-                                {/* <h3 className='lg:text-5xl w-1/2'>Zero Tenacity</h3> */}
-                                {/* <h4 className='lg:text-lg w-1/2'>EBL Season 7 - 5º Place</h4> */}
-                                <AnimatedText
-                                  text={"Zero Tenacity"}
-                                  className={'lg:text-5xl w-1/2'}
-                                />
-                                <AnimatedText
-                                  text={"EBL Season 7 - 5º Place"}
-                                  className={'lg:text-lg w-1/2'}
-                                />
-                            </li>
-                            <li className='flex flex-row'>
-                                {/* <h3 className='lg:text-5xl w-1/2'>UCAM Tokiers</h3>
-                                <h4 className='lg:text-lg w-1/2'>Iberian Cup 2022 - 1º Place</h4> */}
-                                <AnimatedText
-                                  text={"UCAM Tokiers"}
-                                  className={'lg:text-5xl w-1/2'}
-                                />
-                                <AnimatedText
-                                  text={"Iberian Cup 2022 - 1º Place"}
-                                  className={'lg:text-lg w-1/2'}
-                                />
-                            </li>
-                            <li className='flex flex-row'>
-                                {/* <h3 className='lg:text-5xl w-1/2'>INFINITY Esports</h3>
-                                <h4 className='lg:text-lg w-1/2'>LLA 2022 Opening - 3º Place</h4> */}
-                                <AnimatedText
-                                  text={"INFINITY Esports"}
-                                  className={'lg:text-5xl w-1/2'}
-                                />
-                                <AnimatedText
-                                  text={"LLA 2022 Opening - 3º Place"}
-                                  className={'lg:text-lg w-1/2'}
-                                />
-                            </li>
-                            <li className='flex flex-row'>
-                                {/* <h3 className='lg:text-5xl w-1/2'>Dignitas</h3>
-                                <h4 className='lg:text-lg w-1/2'>LCS 2022 Lock In - 3º Place</h4> */}
-                                <AnimatedText
-                                  text={"Dignitas"}
-                                  className={'lg:text-5xl w-1/2'}
-                                />
-                                <AnimatedText
-                                  text={"LCS 2022 Lock In - 3º Place"}
-                                  className={'lg:text-lg w-1/2'}
-                                />
-                            </li>
-                            <li className='flex flex-row'>
-                                {/* <h3 className='lg:text-5xl w-1/2'>SK Gaming</h3> */}
-                                <AnimatedText
-                                  text={"SK Gaming"}
-                                  className={'lg:text-5xl w-1/2'}
-                                />
-                                <ul className='flex flex-col lg:text-lg w-1/2'>
-                                    <li>
-                                      <AnimatedText
-                                        text={"LEC 2023 Winter Season - 3º Place"}
-                                      />
-                                    </li>
-                                    <li>
-                                      <AnimatedText
-                                        text={"LEC 2023 Spring Season - 5º Place"}
-                                      />
-                                    </li>
-                                    <li>
-                                      <AnimatedText
-                                        text={"LEC 2023 Summer Season - 6º Place"}
-                                      />
-                                    </li>
-                                    <li>
-                                      <AnimatedText
-                                        text={"LEC 2023 Season Finals - 6º Place"}
-                                      />
-                                    </li>
-                                </ul>
-                            </li>
+                        <Timeline />
+                        <ul className='w-2/3 flex flex-col gap-24 mt-12'>
+                            <ExperienceCard position={"Data Analyst"} company={"SK Gaming"} duration={"1 year"} description={"Help the League of Legends team get insights from oficial matches and training. Provided data analysis on demand for understanding the League of Legends meta."} />
+                            <ExperienceCard position={"Software developer & CoFounder"} company={"NexTep"} duration={"2 years"} description={"Built a SAAS product to help League of Legends teams get insights from the game. This SAAS was used by Dignitas playing in North America first league LCS & SK Gaming playing in Europe first league LEC."} />
+                            <ExperienceCard position={"Data Analyst"} company={"Dignitas"} duration={"1 year"} description={"Help the League of Legends team get insights from oficial matches and training. Provided data analysis on demand for understanding the League of Legends meta."} />
+                            <ExperienceCard position={"Data Analyst"} company={"INFINITY ESPORTS"} duration={"6 months"} description={"Help the League of Legends team get insights from oficial matches and training. Provided data analysis on demand for understanding the League of Legends meta."} />
+                            <ExperienceCard position={"Data Analyst"} company={"UCAM ESPORTS"} duration={"1 year"} description={"Help the League of Legends team get insights from oficial matches and training. Provided data analysis on demand for understanding the League of Legends meta."} />
+                            <ExperienceCard position={"Internship"} company={"AI2 Institute"} duration={"1 year"} description={"Research in Augmented Reality systems for theme parks and museums."} />
+                            <ExperienceCard position={"Data Scientist"} company={"GBeasts"} duration={"9 months"} description={"Developed a website to help players get better at League of Legends. Worked on a scoring system to classify players by skill in the game League of Legends."} />
+                            <ExperienceCard position={"Data Analyst"} company={"Zero Tenacity"} duration={"4 months"} description={"Help the League of Legends team get insights from oficial matches and training. Provided data analysis on demand for understanding the League of Legends meta."} />
+                            <ExperienceCard position={"Sales Attendant"} company={"Disney World"} duration={"3 months"} description={"Deliver the best experience to guests of the Disney World parks and spread the magic."} />
+                            <ExperienceCard position={"Sales Attendant"} company={"Swarovski"} duration={"9 months"} description={"Deliver the best experience to clients."} />
+
                         </ul>
                     </div>
                 </div>
               </section>
 
-              <section className='absolute flex flex-col top-[300vh] w-[90vw] h-[90vh] items-start mx-[5vw] my-[5vh] py-2'>
+              <section className='absolute flex flex-col top-[600vh] w-[90vw] h-[90vh] items-start mx-[5vw] my-[5vh] py-2'>
                 <div className='w-full border-t-2 flex flex-col pt-4 pb-20'>
                     {/* <h2 className='h-full w-1/3'>SKILLSET</h2> */}
                     <AnimatedTitle
@@ -222,7 +160,7 @@ export default function About () {
                 </div>
               </section>
 
-              <section className='absolute flex flex-col top-[400vh] w-[90vw] h-[90vh] items-start mx-[5vw] my-[5vh]'>
+              <section className='absolute flex flex-col top-[700vh] w-[90vw] h-[90vh] items-start mx-[5vw] my-[5vh]'>
                 <AboutSection />
               </section>
             </Scroll>

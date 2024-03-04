@@ -145,11 +145,12 @@ export default function Project ({ project, project_info }) {
                         <div className="w-full h-full flex flex-col items-center justify-center">
                             <AnimatedTitle
                                 text={project.toUpperCase()}
-                                className={'text-8xl font-bold'}
+                                className={`text-8xl font-bold`}
+                                text_color={project_info['title_color']}
                             />
                             <AnimatedText
                                 text={project_info['year']}
-                                className={'text-6xl'}
+                                className={`text-6xl`}
                             />
                         </div>
                         <div className="w-[90vw] flex flex-row items-center justify-center">
