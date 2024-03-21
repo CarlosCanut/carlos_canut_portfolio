@@ -69,11 +69,11 @@ export default function Home ({ translations }) {
             </Scroll>
             <Scroll html>
               <HeadMenuExtra />
-              <section className='absolute flex flex-row w-[90vw] h-screen justify-center items-center mx-[5vw] gap-8'>
+              <section className='absolute flex flex-row w-[90dvw] h-screen justify-center items-center mx-[5dvw] gap-8'>
                 <motion.div className='fixed top-0 left-0 right-0 h-2 bg-text [transform-origin: 0%]' style={{ scaleX }} />
                 {/* <h1 className='font-ExconBold text-4xl sm:text-5xl md:text-9xl self-start font-bold'>SOFTWARE</h1> */}
                 <motion.div
-                  className='flex flex-col w-[65vw] h-full mt-[100vh] items-start justify-start font-ExconBold text-4xl sm:text-8xl md:text-8xl'
+                  className='flex flex-col w-[65dvw] h-full mt-[100dvh] items-start justify-start font-ExconBold text-4xl sm:text-8xl md:text-8xl'
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
@@ -90,7 +90,7 @@ export default function Home ({ translations }) {
                   />
                 </motion.div>
                 <motion.div 
-                  className='flex flex-col w-[25vw] h-full mt-[100vh] items-start justify-start text-2xl font-ExconMedium sm:text-2xl md:text-2xl'
+                  className='flex flex-col w-[25dvw] h-full mt-[100dvh] items-start justify-start text-2xl font-ExconMedium sm:text-2xl md:text-2xl'
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
@@ -140,43 +140,43 @@ export default function Home ({ translations }) {
                 </motion.div>
               </section>
 
-              <section className='absolute flex flex-col top-[200vh] w-[100vw] h-[100vh] items-center hover:ease-in'>
+              <section className='absolute flex flex-col top-[200dvh] w-[100dvw] h-[100dvh] items-center hover:ease-in'>
                 <motion.div 
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 1, ease: [0.2, 0.65, 0.3, 0.9] }} 
-                  className='w-full h-[80vh] flex flex-row justify-start ml-[10vw]'
+                  className='w-full h-[80dvh] flex flex-row justify-start ml-[10dvw]'
                 >
                   <ProjectCard title={'ENSO'} onClick={() => router.push('/projects/enso')} image_url={'/images/enso/enso.png'} github_link={'https://github.com/CarlosCanut'} />                  
                 </motion.div>
               </section>
 
-              <section className='absolute flex flex-col top-[300vh] w-[100vw] h-[100vh] items-center'>
+              <section className='absolute flex flex-col top-[300dvh] w-[100dvw] h-[100dvh] items-center'>
                 <motion.div 
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 1, ease: [0.2, 0.65, 0.3, 0.9] }} 
-                  className='w-full h-[80vh] flex flex-row justify-end mr-[10vw]'
+                  className='w-full h-[80dvh] flex flex-row justify-end mr-[10dvw]'
                 >
                   <ProjectCard title={'SCOUTEX'} onClick={() => router.push('/projects/scoutex')} image_url={'/images/scoutex/scoutex.png'} github_link={''} />
                 </motion.div>
               </section>
 
-              <section className='absolute flex flex-col top-[400vh] w-[100vw] h-[100vh] items-center'>
+              <section className='absolute flex flex-col top-[400dvh] w-[100dvw] h-[100dvh] items-center'>
                 <motion.div 
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 1, ease: [0.2, 0.65, 0.3, 0.9] }} 
-                  className='w-full h-[80vh] flex flex-row justify-start ml-[10vw]'
+                  className='w-full h-[80dvh] flex flex-row justify-start ml-[10dvw]'
                 >
                   <ProjectCard title={'LOLPICKS'} onClick={() => router.push('/projects/lolpicks')} image_url={'/images/lolpicks.png'} github_link={'https://github.com/CarlosCanut'} />
                 </motion.div>
               </section>
 
-              <section className='absolute flex flex-col top-[500vh] w-[90vw] h-[90vh] items-start justify-start mx-[5vw] my-[5vh]'>
+              <section className='absolute flex flex-col top-[500dvh] w-[90dvw] h-[90dvh] items-start justify-start mx-[5dvw] my-[5dvh]'>
                 <AboutSection />
               </section>
             </Scroll>

@@ -23,7 +23,7 @@ export function Logo ({src, ...props}) {
                 bevelThickness={0.1}
                 height={0.5}
                 size={(size.width/100)/6}
-                scale={0.008}
+                scale={0.008 * size.width / 1250}
             >
               <motion.meshLambertMaterial 
                 attach={'material'} 

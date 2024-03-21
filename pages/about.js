@@ -66,13 +66,15 @@ export default function About ({ translations }) {
                 ABOUT ME
               </TitleText3d>
               <LogoContainer>
-                <Logo src={"/svg/disney.svg"} position={[-6, -2, 0]} />
-                <Logo src={"/svg/swarovski.svg"} position={[-4, -2, 0]} />
-                <Logo src={"/svg/zero_tenacity.svg"} position={[-2, -2, 0]} />
-                <Logo src={"/svg/dignitas.svg"} position={[0, -2, 0]} />
-                <Logo src={"/svg/infinity.svg"} position={[2, -2, 0]} />
-                <Logo src={"/svg/ucam.svg"} position={[4, -2, 0]} />
-                <Logo src={"/svg/sk_gaming.svg"} position={[6, -2, 0]} />
+                <Logo src={""} />
+                <Logo src={"/svg/disney.svg"} />
+                <Logo src={"/svg/swarovski.svg"} />
+                <Logo src={"/svg/zero_tenacity.svg"} />
+                <Logo src={"/svg/dignitas.svg"} />
+                <Logo src={"/svg/infinity.svg"} />
+                <Logo src={"/svg/ucam.svg"} />
+                <Logo src={"/svg/sk_gaming.svg"} />
+                <Logo src={""} />
               </LogoContainer>
               <EffectComposer>
                 <Bloom luminanceThreshold={1} intensity={10} levels={9} mipmapBlur />
@@ -80,7 +82,7 @@ export default function About ({ translations }) {
             </Scroll>
             <Scroll html>
               <HeadMenuExtra />
-              <section className='absolute flex flex-col top-[100vh] w-[90vw] h-[200vh] items-start mx-[5vw]'>
+              <section className='absolute flex flex-col top-[100dvh] w-[90dvw] h-[200dvh] items-start mx-[5dvw]'>
                 <div className='w-full border-t-2 flex flex-col sm:flex-row pt-4 pb-20'>
                     {/* <h2 className='h-full w-1/3'>ABOUT ME</h2> */}
                     <AnimatedTitle
@@ -103,7 +105,7 @@ export default function About ({ translations }) {
                 </div>
               </section>
 
-              <section className='absolute flex flex-col top-[175vh] w-[90vw] h-[150vh] items-start mx-[5vw] '>
+              <section className='absolute flex flex-col top-[175dvh] w-[90dvw] h-[150dvh] items-start mx-[5dvw] '>
 
                 <div className='w-full border-t-2 flex flex-col pt-4 pb-20'>
                     <AnimatedTitle
@@ -130,7 +132,7 @@ export default function About ({ translations }) {
                 </div>
               </section>
 
-              <section className='absolute flex flex-col top-[500vh] w-[90vw] h-[90vh] items-start mx-[5vw] my-[5vh] py-2'>
+              <section className='absolute flex flex-col top-[500dvh] w-[90dvw] h-[90dvh] items-start mx-[5dvw] my-[5dvh] py-2'>
                 <div className='w-full border-t-2 flex flex-col pt-4 pb-20 font-ExconMedium'>
                     {/* <h2 className='h-full w-1/3'>SKILLSET</h2> */}
                     <AnimatedTitle
@@ -176,7 +178,7 @@ export default function About ({ translations }) {
                 </div>
               </section>
 
-              <section className='absolute flex flex-col top-[600vh] w-[90vw] h-[90vh] items-start mx-[5vw] my-[5vh]'>
+              <section className='absolute flex flex-col top-[600dvh] w-[90dvw] h-[90dvh] items-start mx-[5dvw] my-[5dvh]'>
                 <AboutSection />
               </section>
             </Scroll>

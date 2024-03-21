@@ -139,8 +139,8 @@ export default function Project ({ project, project_info }) {
 
     return (
         <>
-        <div className='z-50 absolute flex w-screen top-[86vh] right-0 left-0 justify-center'>
-            <div className='flex flex-row items-center justify-center gap-2 px-2 py-2 left-[20vw] rounded-2xl bg-primary bg-opacity-25'>
+        <div className='z-50 absolute flex w-screen top-[86dvh] right-0 left-0 justify-center'>
+            <div className='flex flex-row items-center justify-center gap-2 px-2 py-2 left-[20dvw] rounded-2xl bg-primary bg-opacity-25'>
                 <span onClick={() => window.open(project_info['github_url'], '_blank')} className="px-4 py-2 rounded-2xl border border-secondary bg-background drop-shadow-2xl cursor-pointer hover:bg-accent">
                     Github
                 </span>
@@ -153,7 +153,7 @@ export default function Project ({ project, project_info }) {
             <ScrollControls pages={project_info['pages']} damping={0.1}>
                 <Scroll html>
                     <HeadMenuExtra />
-                    <section className="w-screen h-[60vh] pt-[20vh] flex flex-col items-center justify-center font-ExconMedium text-5xl text-start">
+                    <section className="w-screen h-[60dvh] pt-[20dvh] flex flex-col items-center justify-center font-ExconMedium text-5xl text-start">
                         <div className="w-full h-full flex flex-col items-center justify-center">
                             <Image src={project_info['project_url']} alt={project} width={100} height={100} />
                             <AnimatedTitle
@@ -166,7 +166,7 @@ export default function Project ({ project, project_info }) {
                                 className={`text-4xl md:text-6xl font-ExconRegular`}
                             />
                         </div>
-                        <div className="w-[90vw] flex flex-row items-center justify-center">
+                        <div className="w-[90dvw] flex flex-row items-center justify-center">
                             <div className="w-full h-full flex flex-col items-start justify-center font-ExconMedium">
                                 <AnimatedText
                                     text={"Services"}
@@ -189,7 +189,7 @@ export default function Project ({ project, project_info }) {
                             </div>
                         </div>
                     </section>
-                    <section className="w-screen h-screen mt-[10vh] flex flex-col items-center justify-center font-ExconMedium text-2xl md:text-5xl text-start">
+                    <section className="w-screen h-screen mt-[10dvh] flex flex-col items-center justify-center font-ExconMedium text-2xl md:text-5xl text-start">
                         <motion.img
                             src={project_info['mockup_url']}
                             alt={`${project} landing page`}
@@ -211,7 +211,7 @@ export default function Project ({ project, project_info }) {
                             />
                         )
                     })}
-                    <section className='flex flex-col w-[90vw] h-[90vh] items-start mx-[5vw] my-[5vh] p-2'>
+                    <section className='flex flex-col w-[90dvw] h-[90dvh] items-start mx-[5dvw] my-[5dvh] p-2'>
                         <AboutSection />
                     </section>
                 </Scroll>

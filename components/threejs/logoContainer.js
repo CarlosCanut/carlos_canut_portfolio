@@ -23,6 +23,9 @@ export function LogoContainer ({ children }) {
     return (
         <>
             {children.map((logo, index) => {
+                if (logo.props.src == "") {
+                    return
+                }
                 const x = -screenWidth / 2 + (index + 1) * gap
                 const worldPosition = screenToWorld(index * gap, 0);
                 console.log("index ", index, "x: ", x, ", worldPosition: ", index * gap)

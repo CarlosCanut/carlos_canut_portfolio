@@ -9,8 +9,8 @@ const HeadMenu = () => {
   
   return (
     <>
-      <nav className='z-50 absolute flex w-screen h-[5vh] top-[5vh] right-0 left-0 justify-center'>
-        <ul className='flex flex-row items-start justify-between w-[90vw] font-ExconRegular'>
+      <nav className='z-50 absolute flex w-screen h-[5dvh] top-[5dvh] right-0 left-0 justify-center'>
+        <ul className='flex flex-row items-start justify-between w-[90dvw] font-ExconRegular'>
           <li>
             <Link className='order-1' href="/">
               <AnimatedTitle
