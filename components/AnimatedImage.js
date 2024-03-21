@@ -42,11 +42,11 @@ const AnimatedImage = ({ image_url, onClick }) => {
         initial="hidden"
         animate={ctrls}
         variants={imageAnimation}
-        whileHover={{ scale: 0.9 }} 
-        transition={{ duration: 0.3 }} 
+        whileHover={{ scale: 0.975 }} 
+        transition={{ duration: 0.2 }} 
         src={image_url} 
         alt='gallery image placeholder' 
-        className='w-full h-[80vh] rounded-3xl opacity-90 cursor-pointer'
+        className='w-full rounded-3xl opacity-90 cursor-pointer'
     />
   );
 };

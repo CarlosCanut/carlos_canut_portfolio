@@ -1,5 +1,6 @@
 import { motion, useScroll } from 'framer-motion'
 import { useRef } from 'react';
+import ExperienceBubble from './timeline/experienceBubble';
 
 
 export default function Timeline () {
@@ -25,21 +26,13 @@ export default function Timeline () {
         }
       };
 
-    const height_2024 = 100
-    const height_2023 = 775
-    const height_2022 = 2025
-    const height_2021 = 2350
-    const height_2020 = 2700
-    const height_2019 = 2900
-    const height_2018 = 2500
-
     return (
         <>
-            <div ref={ref} className='w-1/3 h-full flex flex-col mx-12 items-center justify-center'>
+            <div ref={ref} className='w-1/12 h-full flex flex-col ml-12 items-center justify-center'>
                 <motion.svg
                     width="200"
-                    height="3000"
-                    viewBox="0 0 100 3000"
+                    height="2000"
+                    viewBox="0 0 100 2000"
                     initial="hidden"
                     animate="visible"
                     className={'flex items-center justify-center'}
@@ -49,110 +42,21 @@ export default function Timeline () {
                         x1="0"
                         y1="100"
                         x2="0"
-                        y2="2900"
+                        y2="2000"
                         stroke="#ffffff"
-                        pathLength="2900"
+                        pathLength="2000"
                         style={{ pathLength: scrollProgressY, strokeWidth: "2" }}
                         variants={draw}
                         custom={2}
                     />
                     
-                    {/* 2024 */}
-                    <motion.circle
-                        cx="0"
-                        cy={height_2024}
-                        r="25"
-                        style={{ strokeWidth: "4" }}
-                        fill="#ffffff"
-                    />
-                    <motion.text
-                        x="0"
-                        y={height_2024 + 4}
-                        fill={"#000000"}
-                        stroke={"#000000"}
-                        fontSize="15"
-                        textAnchor="middle"
-                    >2024</motion.text>
-                    {/* 2023 */}
-                    <motion.circle
-                        cx="0"
-                        cy={height_2023}
-                        r="25"
-                        style={{ strokeWidth: "4" }}
-                        fill="#ffffff"
-                    />
-                    <motion.text
-                        x="0"
-                        y={height_2023 + 4}
-                        fill={"#000000"}
-                        stroke={"#000000"}
-                        fontSize="15"
-                        textAnchor="middle"
-                    >2023</motion.text>
-                    {/* 2022 */}
-                    <motion.circle
-                        cx="0"
-                        cy={height_2022}
-                        r="25"
-                        style={{ strokeWidth: "4" }}
-                        fill="#ffffff"
-                    />
-                    <motion.text
-                        x="0"
-                        y={height_2022 + 4}
-                        fill={"#000000"}
-                        stroke={"#000000"}
-                        fontSize="15"
-                        textAnchor="middle"
-                    >2022</motion.text>
-                    {/* 2021 */}
-                    <motion.circle
-                        cx="0"
-                        cy={height_2021}
-                        r="25"
-                        style={{ strokeWidth: "4" }}
-                        fill="#ffffff"
-                    />
-                    <motion.text
-                        x="0"
-                        y={height_2021 + 4}
-                        fill={"#000000"}
-                        stroke={"#000000"}
-                        fontSize="15"
-                        textAnchor="middle"
-                    >2021</motion.text>
-                    {/* 2020 */}
-                    <motion.circle
-                        cx="0"
-                        cy={height_2020}
-                        r="25"
-                        style={{ strokeWidth: "4" }}
-                        fill="#ffffff"
-                    />
-                    <motion.text
-                        x="0"
-                        y={height_2020 + 4}
-                        fill={"#000000"}
-                        stroke={"#000000"}
-                        fontSize="15"
-                        textAnchor="middle"
-                    >2020</motion.text>
-                    {/* 2019 */}
-                    <motion.circle
-                        cx="0"
-                        cy={height_2019}
-                        r="25"
-                        style={{ strokeWidth: "4" }}
-                        fill="#ffffff"
-                    />
-                    <motion.text
-                        x="0"
-                        y={height_2019 + 4}
-                        fill={"#000000"}
-                        stroke={"#000000"}
-                        fontSize="15"
-                        textAnchor="middle"
-                    >2019</motion.text>
+                    <ExperienceBubble animationVariants={draw} year="2024" height={75} />
+                    <ExperienceBubble animationVariants={draw} year="2023" height={440} />
+                    <ExperienceBubble animationVariants={draw} year="2022" height={1290} />
+                    <ExperienceBubble animationVariants={draw} year="2021" height={1475} />
+                    <ExperienceBubble animationVariants={draw} year="2020" height={1675} />
+                    <ExperienceBubble animationVariants={draw} year="2019" height={1850} />
+                    <ExperienceBubble animationVariants={draw} year="2018" height={1975} />
                 </motion.svg>
             </div>
 

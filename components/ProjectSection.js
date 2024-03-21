@@ -12,17 +12,18 @@ export default function ProjectSection ({ title, subtitle, description, image_ur
                         <h2>
                             <AnimatedTitle
                                 text={title}
+                                className={"font-ExconBold"}
                             />
                         </h2>
                     </div>
                     <div className="flex flex-row gap-4 text-xl text-start text-white font-Brockmann font-medium">
                         <AnimatedTitle
                             text={subtitle}
-                            className={'text-lg min-w-fit'}
+                            className={'text-lg min-w-fit font-ExconMedium'}
                         />
                         <AnimatedText
                             text={description}
-                            className={'text-lg w-2/3'}
+                            className={'text-lg w-2/3 font-ExconMedium'}
                         />
                     </div>
                 </div>

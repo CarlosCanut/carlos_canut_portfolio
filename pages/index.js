@@ -10,6 +10,7 @@ import { LayerMaterial, Color, Depth, Displace, Fresnel } from 'lamina'
 import { useRef } from 'react'
 import { random } from 'maath'
 import { a } from '@react-spring/three'
+import { promises as fs } from 'fs'
 
 import Link from 'next/link'
 // import Image from 'next/image'
@@ -27,7 +28,20 @@ import AnimatedText from '../components/AnimatedText'
 
 const AnimatedMaterial = a(MeshDistortMaterial)
 
-export default function Home () {
+export async function getStaticProps ({ locale }) {
+
+  const jsonDirectory = path.join(process.cwd(), 'translations')
+  const translationsRaw = await fs.readFile(jsonDirectory + `/${locale}.json`, 'utf8')
+  const translations = JSON.parse(translationsRaw)
+
+  return {
+    props: {
+      translations
+    }
+  }
+}
+
+export default function Home ({ translations }) {
   const router = useRouter()
   
   const [menuOpened, setMenuOpened] = useState(false)
@@ -55,8 +69,8 @@ export default function Home () {
               {/* <Blob x={4} y={1.5} />
               <Blob x={-4} y={-1.5} /> */}
               {/* <Ball /> */}
-              <TitleText3d position={[0.4, -7, 0]} >
-                PROJECTS
+              <TitleText3d position={[0, -7, 0]}>
+                {translations.section_projects_title}
               </TitleText3d>
               {/* <TitleText3d position={[0, -24, 0]} >
                 EXPERIENCE
@@ -71,7 +85,7 @@ export default function Home () {
                 <motion.div className='fixed top-0 left-0 right-0 h-2 bg-text [transform-origin: 0%]' style={{ scaleX }} />
                 {/* <h1 className='font-ExconBold text-4xl sm:text-5xl md:text-9xl self-start font-bold'>SOFTWARE</h1> */}
                 <motion.div
-                  className='flex flex-col w-[65vw] h-full mt-[100vh] items-start justify-start text-4xl sm:text-8xl md:text-8xl'
+                  className='flex flex-col w-[65vw] h-full mt-[100vh] items-start justify-start font-ExconBold text-4xl sm:text-8xl md:text-8xl'
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
@@ -87,7 +101,7 @@ export default function Home () {
                   />
                 </motion.div>
                 <motion.div 
-                  className='flex flex-col w-[25vw] h-full mt-[100vh] items-start justify-start text-2xl sm:text-2xl md:text-2xl'
+                  className='flex flex-col w-[25vw] h-full mt-[100vh] items-start justify-start text-2xl font-ExconMedium sm:text-2xl md:text-2xl'
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
@@ -145,7 +159,7 @@ export default function Home () {
                   transition={{ duration: 1, ease: [0.2, 0.65, 0.3, 0.9] }} 
                   className='w-full h-[80vh] flex flex-row justify-start ml-[10vw]'
                 >
-                  <ProjectCard title={'ENSO'} onClick={() => router.push('/projects/enso')} image_url={'/images/enso/enso.png'} />                  
+                  <ProjectCard title={'ENSO'} onClick={() => router.push('/projects/enso')} image_url={'/images/enso/enso.png'} github_link={'https://github.com/CarlosCanut'} />                  
                 </motion.div>
               </section>
 
@@ -157,7 +171,7 @@ export default function Home () {
                   transition={{ duration: 1, ease: [0.2, 0.65, 0.3, 0.9] }} 
                   className='w-full h-[80vh] flex flex-row justify-end mr-[10vw]'
                 >
-                  <ProjectCard title={'SCOUTEX'} onClick={() => router.push('/projects/scoutex')} image_url={'/images/scoutex/scoutex.png'} />
+                  <ProjectCard title={'SCOUTEX'} onClick={() => router.push('/projects/scoutex')} image_url={'/images/scoutex/scoutex.png'} github_link={''} />
                 </motion.div>
               </section>
 
@@ -169,11 +183,11 @@ export default function Home () {
                   transition={{ duration: 1, ease: [0.2, 0.65, 0.3, 0.9] }} 
                   className='w-full h-[80vh] flex flex-row justify-start ml-[10vw]'
                 >
-                  <ProjectCard title={'LOLPICKS'} onClick={() => router.push('/projects/lolpicks')} image_url={'/images/lolpicks.png'} />
+                  <ProjectCard title={'LOLPICKS'} onClick={() => router.push('/projects/lolpicks')} image_url={'/images/lolpicks.png'} github_link={'https://github.com/CarlosCanut'} />
                 </motion.div>
               </section>
 
-              <section className='absolute flex flex-col top-[500vh] w-[90vw] h-[90vh] items-start mx-[5vw] my-[5vh]'>
+              <section className='absolute flex flex-col top-[500vh] w-[90vw] h-[90vh] items-start justify-start mx-[5vw] my-[5vh]'>
                 <AboutSection />
               </section>
             </Scroll>

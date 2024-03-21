@@ -10,7 +10,7 @@ const HeadMenu = () => {
   return (
     <>
       <nav className='z-50 absolute flex w-screen h-[5vh] top-[5vh] right-0 left-0 justify-center'>
-        <ul className='flex flex-row items-start justify-between w-[90vw]'>
+        <ul className='flex flex-row items-start justify-between w-[90vw] font-ExconRegular'>
           <li>
             <Link className='order-1' href="/">
               <AnimatedTitle
@@ -44,7 +44,7 @@ const HeadMenu = () => {
             </div> */}
           </li>
           <li>
-            <Link className='order-4' href="/about">
+            <Link className='order-4 font-bold' href="/about">
               <AnimatedTitle
                   text='About Me'
                   className=""

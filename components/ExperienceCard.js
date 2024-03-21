@@ -5,25 +5,25 @@ export default function ExperienceCard ({ position, company, description, durati
 
     return (
         <>
-            <li className='flex flex-row gap-24'>
+            <li className='flex flex-row gap-8 sm:gap-24 w-full'>
                 <div className='flex flex-col w-1/2 gap-4'>
                     <AnimatedText
                         text={position}
-                        className={'lg:text-xl'}
+                        className={'text-md lg:text-xl font-ExconMedium'}
                     />
                     <AnimatedText
                         text={company}
-                        className={'lg:text-5xl font-bold'}
+                        className={'text-2xl lg:text-5xl font-ExconBold'}
                     />
                 </div>
-                <div className='flex flex-col w-full mt-[5vh] gap-2'>
+                <div className='flex flex-col w-full gap-2'>
                     <AnimatedText
                         text={`Duration: ${duration}`}
-                        className={'lg:text-xl'}
+                        className={'lg:text-xl font-ExconMedium'}
                     />
                     <AnimatedText
                         text={description}
-                        className={'lg:text-md'}
+                        className={'text-xs lg:text-md font-ExconRegular'}
                     />
                 </div>
             </li>

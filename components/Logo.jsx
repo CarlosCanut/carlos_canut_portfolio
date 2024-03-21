@@ -22,7 +22,7 @@ export function Logo ({src, ...props}) {
                 bevelSize={0.04}
                 bevelThickness={0.1}
                 height={0.5}
-                size={(size.width/100)/8}
+                size={(size.width/100)/6}
                 scale={0.008}
             >
               <motion.meshLambertMaterial 

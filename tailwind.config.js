@@ -10,11 +10,17 @@ module.exports = {
       fontFamily: {
         JetBrainsMonoMedium: ['JetBrainsMono-Medium', 'medium'],
         JetBrainsMonoSemiBold: ['JetBrainsMono-SemiBold', 'semibold'],
-        ExconMedium: ['Excon-Medium', 'medium'],
-        ExconBold: ['Excon-Bold', 'bold'],
         MontserratAlternates: ['"Montserrat Alternates"', defaultTheme.fontFamily.sans],
         Spinnaker: ['"Spinnaker"', 'regular'],
         PTSansCaption: ['"PT Sans Caption"', 'regular'],
+
+        ExconVariable: ['Excon-Variable', 'variable'],
+        ExconThin: ['Excon-Thin', 'thin'],
+        ExconLight: ['Excon-Light', 'light'],
+        ExconRegular: ['Excon-Regular', 'regular'],
+        ExconMedium: ['Excon-Medium', 'medium'],
+        ExconBold: ['Excon-Bold', 'bold'],
+        ExconBlack: ['Excon-Black', 'black'],
       }
     },
     colors: {

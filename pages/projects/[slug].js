@@ -32,9 +32,11 @@ export async function getServerSideProps ({ params }) {
     const projects = {
         "enso": {
             "year": "(2024)",
+            "pages": 8,
             "services": "[DESIGN, FRONT END]",
             "clients": "[The World]",
             "mockup_url": "/images/enso/mockup_enso.png",
+            "project_url": "/images/logos/enso_logo_v2.svg",
             "github_url": "https://github.com/1dmaol/Enso",
             "web_url": "https://enso-prototype.onrender.com/",
             "sections": [
@@ -60,9 +62,11 @@ export async function getServerSideProps ({ params }) {
         },
         "scoutex": {
             "year": "(2022)",
+            "pages": 8,
             "services": "[DESIGN, FRONT END, BACK END]",
             "clients": "[Dignitas, SK Gaming]",
             "mockup_url": "/images/scoutex/mockup.png",
+            "project_url": "/images/logos/scoutex_logo.svg",
             "sections": [
                 {
                     "title": "THE IDEA",
@@ -86,9 +90,11 @@ export async function getServerSideProps ({ params }) {
         },
         "lolpicks": {
             "year": "(2022)",
+            "pages": 10,
             "services": "DESIGN, FRONT END",
             "clients": "The World",
             "mockup_url": "/images/enso/mockup_enso.png",
+            "project_url": "/images/logos/laning_phase_logo.svg",
             "sections": [
                 {
                     "title": "THE IDEA",
@@ -101,6 +107,12 @@ export async function getServerSideProps ({ params }) {
                     "subtitle": "[PROJECT INFO]",
                     "description": "The main purpose of the project was to create a web to split expenses for travelling that generated us $0 in server costs. To achieve this we have created a system that reads a json file and displays the info, being able to save this file cache, your local files or google drive.",
                     "image_url": "/images/enso/image2.png",
+                },
+                {
+                    "title": "THE LOOKS",
+                    "subtitle": "[PROJECT DESIGN]",
+                    "description": "We wanted the web to follow a design similar to online banks and keeping it as neat and simple as possible, using green as our main colour and follow with a palette of white/grey/black and keeping things clear and easy to find. Just the app we needed for our trip.",
+                    "image_url": "/images/enso/image3.png",
                 },
                 {
                     "title": "THE LOOKS",
@@ -138,40 +150,41 @@ export default function Project ({ project, project_info }) {
             </div>
         </div>
         <Canvas shadows orthographic camera={ { position: [0, 0, 100], zoom: 100 }} className="-z-2">
-            <ScrollControls pages={8} damping={0.1}>
+            <ScrollControls pages={project_info['pages']} damping={0.1}>
                 <Scroll html>
                     <HeadMenuExtra />
                     <section className="w-screen h-[60vh] pt-[20vh] flex flex-col items-center justify-center font-ExconMedium text-5xl text-start">
                         <div className="w-full h-full flex flex-col items-center justify-center">
+                            <Image src={project_info['project_url']} alt={project} width={100} height={100} />
                             <AnimatedTitle
                                 text={project.toUpperCase()}
-                                className={`text-8xl font-bold`}
+                                className={`text-6xl md:text-8xl font-bold font-ExconBold`}
                                 text_color={project_info['title_color']}
                             />
                             <AnimatedText
                                 text={project_info['year']}
-                                className={`text-6xl`}
+                                className={`text-4xl md:text-6xl font-ExconRegular`}
                             />
                         </div>
                         <div className="w-[90vw] flex flex-row items-center justify-center">
-                            <div className="w-full h-full flex flex-col items-start justify-center">
+                            <div className="w-full h-full flex flex-col items-start justify-center font-ExconMedium">
                                 <AnimatedText
                                     text={"Services"}
-                                    className={'text-2xl'}
+                                    className={'text-lg md:text-2xl'}
                                 />
                                 <AnimatedText
                                     text={project_info['services']}
-                                    className={'text-2xl'}
+                                    className={'text-lg md:text-2xl'}
                                 />
                             </div>
-                            <div className="w-full h-full flex flex-col items-end justify-center">
+                            <div className="w-full h-full flex flex-col items-end justify-center font-ExconMedium">
                                 <AnimatedText
                                     text={"Clients"}
-                                    className={'text-2xl'}
+                                    className={'text-lg md:text-2xl'}
                                 />
                                 <AnimatedText
                                     text={project_info['clients']}
-                                    className={'text-2xl'}
+                                    className={'text-lg md:text-2xl'}
                                 />
                             </div>
                         </div>
