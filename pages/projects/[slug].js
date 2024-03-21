@@ -189,7 +189,7 @@ export default function Project ({ project, project_info }) {
                             </div>
                         </div>
                     </section>
-                    <section className="w-screen h-screen mt-[10vh] flex flex-col items-center justify-center font-ExconMedium text-5xl text-start">
+                    <section className="w-screen h-screen mt-[10vh] flex flex-col items-center justify-center font-ExconMedium text-2xl md:text-5xl text-start">
                         <motion.img
                             src={project_info['mockup_url']}
                             alt={`${project} landing page`}
