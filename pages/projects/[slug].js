@@ -32,7 +32,7 @@ export async function getServerSideProps ({ params }) {
     const projects = {
         "enso": {
             "year": "(2024)",
-            "pages": 8,
+            "pages": 9,
             "services": "[DESIGN, FRONT END]",
             "clients": "[The World]",
             "mockup_url": "/images/enso/mockup_enso.png",

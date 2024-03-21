@@ -32,7 +32,7 @@ export default function ProjectSection ({ title, subtitle, description, image_ur
                 <img
                     src={image_url}
                     alt='enso landing page'
-                    className="rounded-lg drop-shadow-xl w-[90vw] h-[90vh] opacity-90 object-cover aspect-square"
+                    className="rounded-lg drop-shadow-xl w-[90vw] opacity-90 object-cover"
                 />
             </section>
         </>

@@ -5,7 +5,6 @@ import { Scroll, ScrollControls, Html, Environment, Instances, Instance, MeshTra
 import { Canvas, useFrame, useThree, extend } from '@react-three/fiber'
 import { motion, useScroll, useSpring } from 'framer-motion'
 import path from 'path'
-import { Bloom, EffectComposer } from '@react-three/postprocessing'
 import { LayerMaterial, Color, Depth, Displace, Fresnel } from 'lamina'
 import { useRef } from 'react'
 import { random } from 'maath'
@@ -24,6 +23,7 @@ import { useRouter } from 'next/router'
 import { ProjectCard } from '../components/ProjectCard'
 import HeadMenuExtra from '../components/HeadMenuExtra'
 import AnimatedText from '../components/AnimatedText'
+import { Lighting } from '../components/threejs/Lighting'
 
 
 const AnimatedMaterial = a(MeshDistortMaterial)
@@ -62,22 +62,10 @@ export default function Home ({ translations }) {
           <ScrollControls pages={6} damping={0.1}>
             {/* This elements won't scroll */}            
             <Scroll>
-              <ambientLight intensity={0.5} />
-              <directionalLight position={[10, 10, 10]} castShadow />
-              <Environment files='https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/industrial_workshop_foundry_1k.hdr' />
-              
-              {/* <Blob x={4} y={1.5} />
-              <Blob x={-4} y={-1.5} /> */}
-              {/* <Ball /> */}
+              <Lighting />
               <TitleText3d position={[0, -7, 0]}>
                 {translations.section_projects_title}
               </TitleText3d>
-              {/* <TitleText3d position={[0, -24, 0]} >
-                EXPERIENCE
-              </TitleText3d> */}
-              <EffectComposer>
-                <Bloom luminanceThreshold={1} intensity={10} levels={9} mipmapBlur />
-              </EffectComposer>
             </Scroll>
             <Scroll html>
               <HeadMenuExtra />
@@ -94,6 +82,7 @@ export default function Home ({ translations }) {
                   <AnimatedTitle
                     text="SOFTWARE"
                     className="font-ExconBold self-start font-bold bg-gradient-to-r from-text via-secondary to-accent bg-clip-text text-transparent"
+                    mainTitle={true}
                   />
                   <AnimatedTitle
                     text="DEVELOPER"

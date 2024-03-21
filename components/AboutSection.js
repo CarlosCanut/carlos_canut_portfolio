@@ -25,7 +25,7 @@ export function AboutSection() {
                             className=""
                         />
                     </li>
-                    <li className="mt-8 sm:mt-24">
+                    <li className="mb-8 sm:mb-0 sm:mt-24">
                         <AnimatedTitle
                             text="CANUTDOMINGUEZ@MAIL.COM"
                             className=""
@@ -41,9 +41,9 @@ export function AboutSection() {
                             className=""
                         />
                     </h1>
-                    <input type="text" inputMode="text" placeholder="Name" className="flex bg-background border-2 border-white px-4 py-6 w-full sm:w-1/2" />
-                    <input type="text" inputMode="text" placeholder="Email" className="flex bg-background border-2 border-white px-4 py-6  w-full sm:w-1/2" />
-                    <input type="text" inputMode="text" placeholder="How can I help you?" className="flex bg-background border-2 border-white px-4 py-6  w-full sm:w-1/2" />
+                    <input type="text" inputMode="text" placeholder="Name" className="flex bg-background border-2 border-white px-4 py-4 md:py-6 w-full sm:w-1/2" />
+                    <input type="text" inputMode="text" placeholder="Email" className="flex bg-background border-2 border-white px-4 py-4 md:py-6  w-full sm:w-1/2" />
+                    <input type="text" inputMode="text" placeholder="How can I help you?" className="flex bg-background border-2 border-white px-4 py-4 md:py-6  w-full sm:w-1/2" />
                     <button className="w-full sm:w-1/2 text-background bg-[#3DBAB8] font-medium font-ExconMedium text-lg py-4">
                         SEND
                     </button>

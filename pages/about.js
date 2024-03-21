@@ -63,7 +63,7 @@ export default function About ({ translations }) {
               <Environment files='https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/industrial_workshop_foundry_1k.hdr' />
               
               <TitleText3d position={[0, 1, 0]} >
-                ABOUT
+                ABOUT ME
               </TitleText3d>
               <LogoContainer>
                 <Logo src={"/svg/disney.svg"} position={[-6, -2, 0]} />
