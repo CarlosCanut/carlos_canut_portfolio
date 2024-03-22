@@ -1,3 +1,93 @@
 {
-    "section_projects_title": "PROJECTS"
+    "open_to_work_1": "Currently open",
+    "open_to_work_2": "to work",
+    "based_in_1": "Based in",
+    "based_in_2": "Valencia, Spain",
+    "about_title": "About Me",
+    "main_title_1": "SOFTWARE",
+    "main_title_2": "DEVELOPER",
+    "section_projects_title": "PROJECTS",
+    "section_about_title": "ABOUT ME",
+    "contact_title": "Contact",
+    "contact_form_name": "Name",
+    "contact_form_email": "Email",
+    "contact_form_description": "How can I help you?",
+    "contact_form_button": "SEND",
+    "about_me_description_1": "Hello, Carlos Canut here, I love creating websites that help and people want to use.",
+    "about_me_description_2": "My hobbies are weightlifting and bouldering.",
+    "about_me_description_3": "The thing I love the most are coffee shops and travelling everytime I can.",
+    "experience_title": "EXPERIENCE",
+    "experience": [
+        {
+            "role": "Data Analyst",
+            "company": "SK Gaming",
+            "duration": "Duration: 1 year",
+            "description": "League of Legends data analysis reports on demand and match scoutings."
+        },
+        {
+            "role": "Software developer & CoFounder",
+            "company": "NexTep",
+            "duration": "Duration: 2 year",
+            "description": "Built a SAAS product to help League of Legends teams get insights from the game."
+        },
+        {
+            "role": "Data Analyst",
+            "company": "Dignitas",
+            "duration": "Duration: 1 year",
+            "description": "League of Legends data analysis reports on demand and match scoutings."
+        },
+        {
+            "role": "Data Analyst",
+            "company": "INFINITY ESPORTS",
+            "duration": "Duration: 6 months",
+            "description": "League of Legends data analysis reports on demand and match scoutings."
+        },
+        {
+            "role": "Data Analyst",
+            "company": "UCAM ESPORTS",
+            "duration": "Duration: 1 year",
+            "description": "League of Legends data analysis reports on demand and match scoutings."
+        },
+        {
+            "role": "Internship",
+            "company": "AI2 Institute",
+            "duration": "Duration: 1 year",
+            "description": "Research in Augmented Reality systems for theme parks and museums."
+        },
+        {
+            "role": "Data Scientist",
+            "company": "GBeasts",
+            "duration": "Duration: 9 months",
+            "description": "Helped develop a website based on a scoring model for League of Legends."
+        },
+        {
+            "role": "Data Analyst",
+            "company": "Zero Tenacity",
+            "duration": "Duration: 4 months",
+            "description": "League of Legends data analysis reports on demand and match scoutings."
+        },
+        {
+            "role": "Sales Attendant",
+            "company": "Disney World",
+            "duration": "Duration: 3 months",
+            "description": "Deliver the best experience to guests of the Disney World parks and spread the magic."
+        },
+        {
+            "role": "Sales Attendant",
+            "company": "Swarovski",
+            "duration": "Duration: 9 months",
+            "description": "Deliver the best experience to clients."
+        }
+    ],
+    "skillset_title": "SKILLSET",
+    "skillset": [
+        {
+            "title": "Web development",
+            "description": "I plan, design and build scalable web applications."
+        },
+        {
+            "title": "Data Analysis",
+            "description": "With experience in analysing data towards esports in the highest level, I can analyse and extract data insights."
+        }
+    ]
 }

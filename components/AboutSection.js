@@ -1,7 +1,8 @@
 import AnimatedTitle from "./AnimatedTitle";
 import { motion } from 'framer-motion'
 
-export function AboutSection() {
+
+export function AboutSection({ translations }) {
 
     return (
         <>
@@ -37,15 +38,15 @@ export function AboutSection() {
                 <div className="w-full sm:w-2/3 h-full flex flex-col gap-6 sm:gap-8">
                     <h1 className="text-6xl font-ExconBold">
                         <AnimatedTitle
-                            text="Contact"
+                            text={translations.contact_title}
                             className=""
                         />
                     </h1>
-                    <input type="text" inputMode="text" placeholder="Name" className="flex bg-background border-2 border-white px-4 py-4 md:py-6 w-full sm:w-1/2" />
-                    <input type="text" inputMode="text" placeholder="Email" className="flex bg-background border-2 border-white px-4 py-4 md:py-6  w-full sm:w-1/2" />
-                    <input type="text" inputMode="text" placeholder="How can I help you?" className="flex bg-background border-2 border-white px-4 py-4 md:py-6  w-full sm:w-1/2" />
+                    <input type="text" inputMode="text" placeholder={translations.contact_form_name} className="flex bg-background border-2 border-white px-4 py-4 md:py-6 w-full sm:w-1/2" />
+                    <input type="text" inputMode="text" placeholder={translations.contact_form_email} className="flex bg-background border-2 border-white px-4 py-4 md:py-6  w-full sm:w-1/2" />
+                    <input type="text" inputMode="text" placeholder={translations.contact_form_description} className="flex bg-background border-2 border-white px-4 py-4 md:py-6  w-full sm:w-1/2" />
                     <button className="w-full sm:w-1/2 text-background bg-[#3DBAB8] font-medium font-ExconMedium text-lg py-4">
-                        SEND
+                        {translations.contact_form_button}
                     </button>
                 </div>
             </motion.div>

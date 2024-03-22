@@ -63,7 +63,7 @@ export default function About ({ translations }) {
               <Environment files='https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/industrial_workshop_foundry_1k.hdr' />
               
               <TitleText3d position={[0, 1, 0]} >
-                ABOUT ME
+                {translations.section_about_title}
               </TitleText3d>
               <LogoContainer>
                 <Logo src={""} />
@@ -81,25 +81,25 @@ export default function About ({ translations }) {
               </EffectComposer>
             </Scroll>
             <Scroll html>
-              <HeadMenuExtra />
+              <HeadMenuExtra translations={translations} />
               <section className='absolute flex flex-col top-[100dvh] w-[90dvw] h-[200dvh] items-start mx-[5dvw]'>
                 <div className='w-full border-t-2 flex flex-col sm:flex-row pt-4 pb-20'>
                     {/* <h2 className='h-full w-1/3'>ABOUT ME</h2> */}
                     <AnimatedTitle
-                      text={"ABOUT ME"}
+                      text={translations.about_title}
                       className={'h-full w-1/3 font-ExconMedium'}
                     />
                     <div className='h-full w-full sm:w-2/3 text-2xl md:text-4xl xl:text-5xl pt-4 px-2 sm:px-0'>
                       <AnimatedText
-                        text={"Hello, Carlos Canut here, I love creating websites that help and people want to use."}
+                        text={translations.about_me_description_1}
                       />
                       <br/>
                       <AnimatedText
-                        text={"My hobbies are weightlifting and bouldering."}
+                        text={translations.about_me_description_2}
                       />
                       <br/>
                       <AnimatedText
-                        text={"The thing I love the most are coffee shops and travelling everytime I can."}
+                        text={translations.about_me_description_3}
                       />
                     </div>
                 </div>
@@ -109,14 +109,19 @@ export default function About ({ translations }) {
 
                 <div className='w-full border-t-2 flex flex-col pt-4 pb-20'>
                     <AnimatedTitle
-                      text={"EXPERIENCE"}
+                      text={translations.experience_title}
                       className={'h-full w-1/3 font-ExconMedium'}
                     />
                     <div className='h-full w-full flex flex-row items-start pt-4'>
                         {/* esports team list */}
                         <Timeline />
                         <ul className='w-10/12 flex flex-col gap-12 sm:gap-24 mt-12'>
-                            <ExperienceCard position={"Data Analyst"} company={"SK Gaming"} duration={"1 year"} description={"League of Legends data analysis reports on demand and match scoutings."} />
+                        {translations.experience.map((item, index) => {
+                          return (
+                            <ExperienceCard key={index} position={item.role} company={item.company} duration={item.duration} description={item.description} />
+                          )
+                        })}
+                            {/* <ExperienceCard position={"Data Analyst"} company={"SK Gaming"} duration={"1 year"} description={"League of Legends data analysis reports on demand and match scoutings."} />
                             <ExperienceCard position={"Software developer & CoFounder"} company={"NexTep"} duration={"2 years"} description={"Built a SAAS product to help League of Legends teams get insights from the game."} />
                             <ExperienceCard position={"Data Analyst"} company={"Dignitas"} duration={"1 year"} description={"League of Legends data analysis reports on demand and match scoutings."} />
                             <ExperienceCard position={"Data Analyst"} company={"INFINITY ESPORTS"} duration={"6 months"} description={"League of Legends data analysis reports on demand and match scoutings."} />
@@ -125,7 +130,7 @@ export default function About ({ translations }) {
                             <ExperienceCard position={"Data Scientist"} company={"GBeasts"} duration={"9 months"} description={"Helped develop a website based on a scoring model for League of Legends."} />
                             <ExperienceCard position={"Data Analyst"} company={"Zero Tenacity"} duration={"4 months"} description={"League of Legends data analysis reports on demand and match scoutings."} />
                             <ExperienceCard position={"Sales Attendant"} company={"Disney World"} duration={"3 months"} description={"Deliver the best experience to guests of the Disney World parks and spread the magic."} />
-                            <ExperienceCard position={"Sales Attendant"} company={"Swarovski"} duration={"9 months"} description={"Deliver the best experience to clients."} />
+                            <ExperienceCard position={"Sales Attendant"} company={"Swarovski"} duration={"9 months"} description={"Deliver the best experience to clients."} /> */}
 
                         </ul>
                     </div>
@@ -136,11 +141,33 @@ export default function About ({ translations }) {
                 <div className='w-full border-t-2 flex flex-col pt-4 pb-20 font-ExconMedium'>
                     {/* <h2 className='h-full w-1/3'>SKILLSET</h2> */}
                     <AnimatedTitle
-                      text={"SKILLSET"}
+                      text={translations.skillset_title}
                       className={'h-full w-1/3'}
                     />
                     <div className='h-full w-full flex flex-col px-2 sm:px-8 py-12 font-medium text-md sm:text-2xl'>
-                      <div className='flex flex-row px-2 py-8 border-t-2 border-b-2 border-text gap-12'>
+                    {translations.skillset.map((item, index) => {
+                      return (
+                        <div className='flex flex-row px-2 py-8 border-t-2 border-b-2 border-text gap-12'>
+                          <h3>
+                            <AnimatedText
+                              text={"0" + (index + 1)}
+                            />
+                          </h3>
+                          <span>
+                            <AnimatedText
+                              text={item.title}
+                            />
+                            <br/>
+                            <br/>
+                            <AnimatedText
+                              text={item.description}
+                            />
+                          </span>
+                        </div>
+                      )
+                    })}
+                      
+                      {/* <div className='flex flex-row px-2 py-8 border-t-2 border-b-2 border-text gap-12'>
                         <h3>
                           <AnimatedText
                             text={"01"}
@@ -173,13 +200,13 @@ export default function About ({ translations }) {
                             text={"With experience in analysing data towards esports in the highest level, I can analyse and extract data insights."}
                           />
                         </span>
-                      </div>
+                      </div> */}
                     </div>
                 </div>
               </section>
 
               <section className='absolute flex flex-col top-[600dvh] w-[90dvw] h-[90dvh] items-start mx-[5dvw] my-[5dvh]'>
-                <AboutSection />
+                <AboutSection translations={translations} />
               </section>
             </Scroll>
           </ScrollControls>

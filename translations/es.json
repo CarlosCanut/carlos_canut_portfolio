@@ -1,3 +1,93 @@
 {
-    "section_projects_title": "PROJECTOS"
+    "open_to_work_1": "Actualmente abierto",
+    "open_to_work_2": "a proyectos",
+    "based_in_1": "Basado en",
+    "based_in_2": "Valencia, España",
+    "about_title": "Sobre Mi",
+    "main_title_1": "DESARROLLADOR",
+    "main_title_2": "DE SOFTWARE",
+    "section_projects_title": "PROYECTOS",
+    "section_about_title": "SOBRE MI",
+    "contact_title": "Contacto",
+    "contact_form_name": "Nombre",
+    "contact_form_email": "Email",
+    "contact_form_description": "Como puedo ayudarte?",
+    "contact_form_button": "ENVIAR",
+    "about_me_description_1": "Hola, Carlos Canut aqui, Amo crear webs que la gente disfrute de ver y usar.",
+    "about_me_description_2": "Mis hobbies son levantar pesas y la escalada.",
+    "about_me_description_3": "Lo que más amo son las cafeterias y viajar.",
+    "experience_title": "EXPERIENCIA",
+    "experience": [
+        {
+            "role": "Analista de Datos",
+            "company": "SK Gaming",
+            "duration": "Duración: 1 año",
+            "description": "Informes de análisis de datos de League of Legends a petición y scouting de partidas."
+        },
+        {
+            "role": "Desarrollador de Software & CoFundador",
+            "company": "NexTep",
+            "duration": "Duración: 2 años",
+            "description": "Desarrollé un producto SAAS para ayudar a equipos de League of Legends a obtener insights del juego."
+        },
+        {
+            "role": "Analista de Datos",
+            "company": "Dignitas",
+            "duration": "Duración: 1 año",
+            "description": "Informes de análisis de datos de League of Legends a petición y scouting de partidas."
+        },
+        {
+            "role": "Analista de Datos",
+            "company": "INFINITY ESPORTS",
+            "duration": "Duración: 6 meses",
+            "description": "Informes de análisis de datos de League of Legends a petición y scouting de partidas."
+        },
+        {
+            "role": "Analista de Datos",
+            "company": "UCAM ESPORTS",
+            "duration": "Duración: 1 año",
+            "description": "Informes de análisis de datos de League of Legends a petición y scouting de partidas."
+        },
+        {
+            "role": "Prácticas",
+            "company": "AI2 Institute",
+            "duration": "Duración: 1 año",
+            "description": "Investigación en sistemas de Realidad Aumentada para parques temáticos y museos."
+        },
+        {
+            "role": "Cientifico de Datos",
+            "company": "GBeasts",
+            "duration": "Duración: 9 meses",
+            "description": "Ayudé a desarrollar un sitio web basado en un modelo de puntuación para League of Legends."
+        },
+        {
+            "role": "Analista de Datos",
+            "company": "Zero Tenacity",
+            "duration": "Duración: 4 meses",
+            "description": "Informes de análisis de datos de League of Legends a petición y scouting de partidas."
+        },
+        {
+            "role": "Asistente de Ventas",
+            "company": "Disney World",
+            "duration": "Duración: 3 meses",
+            "description": "Ofrecer la mejor experiencia de los parques de Disney World y difundir la magia."
+        },
+        {
+            "role": "Asistente de Ventas",
+            "company": "Swarovski",
+            "duration": "Duración: 9 meses",
+            "description": "Ofrecer la mejor experiencia a los clientes."
+        }
+    ],
+    "skillset_title": "HABILIDADES",
+    "skillset": [
+        {
+            "title": "Desarrollo Web",
+            "description": "Planifico, diseño y desarrollo aplicaciones web escalables."
+        },
+        {
+            "title": "Analisis de Datos",
+            "description": "Con experiencia en el análisis de datos para deportes electrónicos a nivel más alto, puedo analizar y extraer insights de datos."
+        }
+    ]
 }

@@ -68,7 +68,7 @@ export default function Home ({ translations }) {
               </TitleText3d>
             </Scroll>
             <Scroll html>
-              <HeadMenuExtra />
+              <HeadMenuExtra translations={translations} />
               <section className='absolute flex flex-col md:flex-row w-[90dvw] h-screen justify-center items-center mx-[5dvw] gap-8'>
                 <motion.div className='fixed top-0 left-0 right-0 h-2 bg-text [transform-origin: 0%]' style={{ scaleX }} />
                 {/* <h1 className='font-ExconBold text-4xl sm:text-5xl md:text-9xl self-start font-bold'>SOFTWARE</h1> */}
@@ -80,12 +80,12 @@ export default function Home ({ translations }) {
                   transition={{ duration: 1, ease: [0.2, 0.65, 0.3, 0.9] }}
                 >
                   <AnimatedTitle
-                    text="SOFTWARE"
+                    text={translations.main_title_1}
                     className="font-ExconBold self-start font-bold bg-gradient-to-r from-text via-secondary to-accent bg-clip-text text-transparent"
                     mainTitle={true}
                   />
                   <AnimatedTitle
-                    text="DEVELOPER"
+                    text={translations.main_title_2}
                     className="font-ExconBold self-end font-bold"
                   />
                 </motion.div>
@@ -177,7 +177,7 @@ export default function Home ({ translations }) {
               </section>
 
               <section className='absolute flex flex-col top-[500dvh] w-[90dvw] h-[90dvh] items-start justify-start mx-[5dvw] my-[5dvh]'>
-                <AboutSection />
+                <AboutSection translations={translations} />
               </section>
             </Scroll>
           </ScrollControls>

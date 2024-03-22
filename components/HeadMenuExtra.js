@@ -5,7 +5,7 @@ import { motion, useSpring } from 'framer-motion';
 import { useScroll } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 
-const HeadMenuExtra = () => {
+const HeadMenuExtra = ({ translations }) => {
   
   return (
     <>
@@ -14,11 +14,11 @@ const HeadMenuExtra = () => {
           <li>
             <div className='order-2 flex-none'>
               <AnimatedTitle
-                  text='Currently open'
+                  text={translations.open_to_work_1}
                   className=""
               />
               <AnimatedTitle
-                  text='to work'
+                  text={translations.open_to_work_2}
                   className=""
               />
             </div>
@@ -26,11 +26,11 @@ const HeadMenuExtra = () => {
           <li>
             <div className='order-3 flex-none' href="/">
               <AnimatedTitle
-                  text='Based in'
+                  text={translations.based_in_1}
                   className=""
               />
               <AnimatedTitle
-                  text='Valencia, Spain'
+                  text={translations.based_in_2}
                   className=""
               />
             </div>

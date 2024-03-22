@@ -18,7 +18,7 @@ export default function ExperienceCard ({ position, company, description, durati
                 </div>
                 <div className='flex flex-col w-full gap-2'>
                     <AnimatedText
-                        text={`Duration: ${duration}`}
+                        text={`${duration}`}
                         className={'lg:text-xl font-ExconMedium'}
                     />
                     <AnimatedText
