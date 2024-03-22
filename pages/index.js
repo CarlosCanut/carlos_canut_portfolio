@@ -73,7 +73,7 @@ export default function Home ({ translations }) {
                 <motion.div className='fixed top-0 left-0 right-0 h-2 bg-text [transform-origin: 0%]' style={{ scaleX }} />
                 {/* <h1 className='font-ExconBold text-4xl sm:text-5xl md:text-9xl self-start font-bold'>SOFTWARE</h1> */}
                 <motion.div
-                  className='flex flex-col w-[65dvw] md:h-full mt-[50dvh] md:mt-[100dvh] items-start justify-start font-ExconBold text-4xl sm:text-8xl md:text-8xl'
+                  className='flex flex-col w-[65dvw] md:h-full mt-[50dvh] md:mt-[100dvh] items-start justify-start font-ExconBold text-5xl sm:text-8xl md:text-8xl'
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
