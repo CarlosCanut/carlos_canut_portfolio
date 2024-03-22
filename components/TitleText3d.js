@@ -34,7 +34,7 @@ export function TitleText3d (props) {
                 curveSegments={32}
                 bevelEnabled
                 bevelSize={0.04}
-                bevelThickness={0.2}
+                bevelThickness={0.002}
                 height={0.5}
                 lineHeight={0.5}
                 letterSpacing={0.06}
