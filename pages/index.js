@@ -138,7 +138,7 @@ export default function Home({ translations }) {
                 <Scene translations={translations} />
             </section>
 
-            <section className='flex flex-col gap-24'>
+            <section className='flex flex-col gap-24 w-[100dvw]'>
                 <div className='flex flex-col w-[100dvw] items-center hover:ease-in'>
                     <motion.div
                         initial={{ opacity: 0, y: -10 }}
