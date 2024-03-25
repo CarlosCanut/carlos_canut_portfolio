@@ -138,8 +138,8 @@ export default function Home({ translations }) {
                 <Scene translations={translations} />
             </section>
 
-            {/* <section className='flex flex-col gap-24 w-[100dvw]'>
-                <div className='flex flex-col w-[100dvw] items-center hover:ease-in'>
+            <section className='flex flex-col gap-24 w-[100dvw]'>
+                <div className='flex flex-col w-full items-center hover:ease-in'>
                     <motion.div
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -150,7 +150,7 @@ export default function Home({ translations }) {
                         <ProjectCard title={'ENSO'} onClick={() => router.push('/projects/enso')} image_url={'/images/enso/enso.png'} github_link={'https://github.com/CarlosCanut'} />
                     </motion.div>
                 </div>
-                <div className='flex flex-col w-[100dvw] items-center hover:ease-in'>
+                <div className='flex flex-col w-full items-center hover:ease-in'>
                     <motion.div
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -161,7 +161,7 @@ export default function Home({ translations }) {
                         <ProjectCard title={'SCOUTEX'} onClick={() => router.push('/projects/scoutex')} image_url={'/images/scoutex/scoutex.png'} github_link={''} />
                     </motion.div>
                 </div>
-                <div className='flex flex-col w-[100dvw] items-center hover:ease-in'>
+                <div className='flex flex-col w-full items-center hover:ease-in'>
                     <motion.div
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -172,7 +172,7 @@ export default function Home({ translations }) {
                         <ProjectCard title={'LOLPICKS'} onClick={() => router.push('/projects/lolpicks')} image_url={'/images/lolpicks.png'} github_link={'https://github.com/CarlosCanut'} />
                     </motion.div>
                 </div>
-            </section> */}
+            </section>
 
 
 
