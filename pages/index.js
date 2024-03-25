@@ -60,7 +60,7 @@ export default function Home({ translations }) {
     const router = useRouter()
 
     return (
-        <Suspense fallback="Loading...">
+        <>
             <header>
                 <HeadMenu translations={translations} />
                 <HeadMenuExtra translations={translations} />
@@ -181,6 +181,6 @@ export default function Home({ translations }) {
             <section className='flex flex-col w-[90dvw] h-[90dvh] items-start justify-start mx-[5dvw] my-[5dvh]'>
                 <AboutSection translations={translations} />
             </section>
-        </Suspense>
+        </>
     )
 }
