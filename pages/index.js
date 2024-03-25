@@ -61,10 +61,10 @@ export default function Home({ translations }) {
 
     return (
         <>
-            <header>
+            <div>
                 <HeadMenu translations={translations} />
                 <HeadMenuExtra translations={translations} />
-            </header>
+            </div>
             <section className='flex flex-col md:flex-row w-[90dvw] h-screen justify-center items-center mx-[5dvw] gap-8'>
                 <motion.div
                     className='flex flex-col w-[65dvw] md:h-full mt-[50dvh] md:mt-[100dvh] items-start justify-start font-ExconBold text-2xl sm:text-4xl md:text-6xl lg:text-8xl'
