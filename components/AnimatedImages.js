@@ -40,6 +40,7 @@ const AnimatedImages = () => {
         className="w-full h-full"
         ref={ref}
         initial="hidden"
+        exit="hidden"
         animate={ctrls}
         variants={imageAnimation}
     >

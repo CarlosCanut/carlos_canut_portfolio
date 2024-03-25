@@ -40,6 +40,7 @@ const AnimatedImage = ({ image_url, onClick }) => {
         onClick={onClick}
         ref={ref}
         initial="hidden"
+        exit="hidden"
         animate={ctrls}
         variants={imageAnimation}
         whileHover={{ scale: 0.975 }} 

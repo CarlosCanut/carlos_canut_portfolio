@@ -1,55 +1,39 @@
 import * as THREE from 'three'
 import { Bounds, Edges, Environment, Lightformer, PointMaterial, Points, Sky, Text3D, useGLTF } from '@react-three/drei'
-import { Bloom, EffectComposer } from '@react-three/postprocessing'
+import { Bloom, EffectComposer, N8AO } from '@react-three/postprocessing'
 import { useRef, useState } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { LayerMaterial, Depth, Fresnel } from 'lamina'
 import { useControls } from 'leva'
 
 
-function Cursor(props) {
-  const ref = useRef()
-  const { nodes } = useGLTF('/cursor.glb')
-
-  // Animate gradient
-  useFrame((state) => {
-    const sin = Math.sin(state.clock.elapsedTime / 2)
-    const cos = Math.cos(state.clock.elapsedTime / 2)
-    ref.current.layers[0].origin.set(cos / 2, 0, 0)
-    ref.current.layers[1].origin.set(cos, sin, cos)
-    ref.current.layers[2].origin.set(sin, cos, sin)
-    ref.current.layers[3].origin.set(cos, sin, cos)
-  })
-
-  return (
-    <Text3D {...props}>
-      <LayerMaterial ref={ref} toneMapped={false}>
-        <Depth colorA="#ff0080" colorB="black" alpha={1} mode="normal" near={0.5 * 0.7} far={0.5} origin={[0, 0, 0]} />
-        <Depth colorA="blue" colorB="#f7b955" alpha={1} mode="add" near={2 * 0.7} far={2} origin={[0, 1, 1]} />
-        <Depth colorA="green" colorB="#f7b955" alpha={1} mode="add" near={3 * 0.7} far={3} origin={[0, 1, -1]} />
-        <Depth colorA="white" colorB="red" alpha={1} mode="overlay" near={1.5 * 0.7} far={1.5} origin={[1, -1, -1]} />
-        <Fresnel mode="add" color="white" intensity={0.5} power={1.5} bias={0.05} />
-      </LayerMaterial>
-      <Edges color="white" />
-    </Text3D>
-  )
-}
-
-
-
-
-
-
-
-
 export function Lighting () {
   return (
     <>
-      {/* <Cursor scale={[0.5, 1, 0.5]} /> */}
-      {/* <Text scale={[0.5, 1, 0.5]} /> */}
-      <color attach="background" args={['#141622']} />
-      <fog attach="fog" args={["#000000", 8, 35]} />
-      <ambientLight intensity={0.5} />
+      {/* <ambientLight intensity={0.5} />
+      <directionalLight position={[10, 10, 10]} castShadow />
+      <Environment files='https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/industrial_workshop_foundry_1k.hdr' /> */}
+
+      <color attach="background" args={['#070B1B']} />
+      <ambientLight intensity={0.4} />
+      <spotLight position={[10, 10, 0]} angle={0.45} penumbra={1} intensity={10} castShadow />
+      <spotLight position={[-10, -10, -10]} angle={-0.45} penumbra={1} intensity={10} castShadow />
+
+      <EffectComposer disableNormalPass multisampling={8}>
+        <N8AO distanceFalloff={1} aoRadius={1} intensity={4} />
+      </EffectComposer>
+      {/* <Environment resolution={256}>
+        <group rotation={[-Math.PI / 3, 0, 1]}>
+          <Lightformer form="circle" intensity={4} rotation-x={Math.PI / 2} position={[0, 5, -9]} scale={2} />
+          <Lightformer form="circle" intensity={2} rotation-y={Math.PI / 2} position={[-5, 1, -1]} scale={2} />
+          <Lightformer form="circle" intensity={2} rotation-y={Math.PI / 2} position={[-5, -1, -1]} scale={2} />
+          <Lightformer form="circle" intensity={2} rotation-y={-Math.PI / 2} position={[10, 1, 0]} scale={8} />
+          <Lightformer form="circle" intensity={4} rotation-y={-Math.PI / 2} position={[0, 0, 10]} scale={12} />
+        </group>
+      </Environment> */}
+      {/* <EffectComposer>
+        <Bloom luminanceThreshold={1} intensity={10} levels={9} mipmapBlur />
+      </EffectComposer> */}
     </>
   )
 }

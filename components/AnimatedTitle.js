@@ -39,7 +39,7 @@ const AnimatedTitle = ({ text, className, text_color="text-white" }) => {
   };
 
   return (
-    <h2 className={className} aria-label={text} role="heading">
+    <div className={className} aria-label={text} role="heading">
       {text.split(" ").map((word, index) => (
         <motion.span
           key={index}
@@ -47,6 +47,7 @@ const AnimatedTitle = ({ text, className, text_color="text-white" }) => {
           ref={ref}
           aria-hidden="true"
           initial="hidden"
+          exit="hidden"
           animate={ctrls}
           variants={wordAnimation}
           transition={{
@@ -67,7 +68,7 @@ const AnimatedTitle = ({ text, className, text_color="text-white" }) => {
           {index < text.split(" ").length - 1 && "\u00A0"} {/* Add non-breaking space after each word except the last one */}
         </motion.span>
       ))}
-    </h2>
+    </div>
   );
 };
 

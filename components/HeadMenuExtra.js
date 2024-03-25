@@ -9,7 +9,7 @@ const HeadMenuExtra = ({ translations }) => {
   
   return (
     <>
-      <nav className='z-50 absolute w-screen h-[5dvh] top-[5dvh] right-0 left-[25dvw] justify-start hidden sm:flex'>
+      <nav className='-z-2 absolute w-screen h-[5dvh] top-[5dvh] right-0 left-[25dvw] justify-start hidden sm:flex'>
         <ul className='flex flex-row items-start justify-between w-[40dvw] font-ExconRegular'>
           <li>
             <div className='order-2 flex-none'>

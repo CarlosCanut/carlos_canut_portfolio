@@ -5,11 +5,11 @@ import { motion, useSpring } from 'framer-motion';
 import { useScroll } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 
-const HeadMenu = () => {
+const HeadMenu = ({ translations }) => {
   
   return (
     <>
-      <nav className='z-50 absolute flex w-screen h-[5dvh] top-[5dvh] right-0 left-0 justify-center'>
+      <nav className='z-50 fixed flex w-screen h-[5dvh] top-[5dvh] right-0 left-0 justify-center'>
         <ul className='flex flex-row items-start justify-between w-[90dvw] font-ExconRegular'>
           <li>
             <Link className='order-1' href="/">
@@ -46,7 +46,7 @@ const HeadMenu = () => {
           <li>
             <Link className='order-4 font-bold' href="/about">
               <AnimatedTitle
-                  text='About Me'
+                  text={translations.about_title}
                   className=""
               />
             </Link>

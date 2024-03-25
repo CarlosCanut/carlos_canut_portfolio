@@ -34,7 +34,7 @@ const AnimatedText = ({ text, className }) => {
   };
 
   return (
-    <h2 className={className} aria-label={text} role="heading">
+    <div className={className} aria-label={text} role="heading">
       {text.split(" ").map((character, index) => (
         <motion.span
           key={index}
@@ -44,16 +44,18 @@ const AnimatedText = ({ text, className }) => {
           initial="hidden"
           animate={ctrls}
           variants={characterAnimation}
+          exit="hidden"
           transition={{
             delayChildren: index * 0.25,
             staggerChildren: 0.05,
           }}
+
         >
           {character}
           {index < text.split(" ").length - 1 && "\u00A0"} {/* Add non-breaking space after each word except the last one */}
         </motion.span>
       ))}
-    </h2>
+    </div>
   );
 };
 

@@ -15,9 +15,6 @@ const Layout = ({ children }) => {
         <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&family=Spinnaker&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&family=PT+Sans+Caption&family=Spinnaker&display=swap" rel="stylesheet" />
       </Head>
-      <header>
-        <HeadMenu />
-      </header>
       <main className='w-screen h-screen'>
         {children}
       </main>

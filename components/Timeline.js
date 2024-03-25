@@ -28,7 +28,7 @@ export default function Timeline () {
 
     return (
         <>
-            <div ref={ref} className='w-1/12 h-full flex flex-col ml-12 items-center justify-center'>
+            <div ref={ref} className='w-1/12 flex flex-col ml-12 items-center justify-center'>
                 <motion.svg
                     width="200"
                     height="2000"

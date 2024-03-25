@@ -28,7 +28,6 @@ export function LogoContainer ({ children }) {
                 }
                 const x = -screenWidth / 2 + (index + 1) * gap
                 const worldPosition = screenToWorld(index * gap, 0);
-                console.log("index ", index, "x: ", x, ", worldPosition: ", index * gap)
                 return (
                     <Logo
                         key={index}
