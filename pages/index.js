@@ -134,7 +134,7 @@ export default function Home({ translations }) {
                 </motion.div>
             </section>
 
-            <section className='flex flex-col w-screen h-[50dvh] justify-center items-center'>
+            <section className='flex flex-col w-[100dvw] h-[50dvh] justify-center items-center'>
                 <Scene translations={translations} />
             </section>
 
