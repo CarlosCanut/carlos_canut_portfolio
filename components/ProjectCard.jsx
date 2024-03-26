@@ -5,7 +5,7 @@ import AnimatedImage from './AnimatedImage';
 export function ProjectCard ({ title, onClick, image_url, github_link }) {
 
     return (
-        <div className='w-[90vw] md:w-[60vw] flex flex-col'>
+        <div className='w-full md:w-[60vw] flex flex-col'>
             <div className='flex flex-row mb-2 ml-4 items-end gap-4'>
                 {/* <h2 className='font-ExconBold text-6xl font-extrabold'>ENSO</h2> */}
                 <AnimatedTitle
