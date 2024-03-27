@@ -51,7 +51,7 @@ function Scene({ translations }) {
         <div className='flex w-full h-full md:h-[60dvh]'>
             <Canvas shadows dpr={[1, 1.5]} gl={{ antialias: false }} camera={{ position: [0, 0, 14], fov: 17.5, near: 1, far: 20 }} className='-z-2 '>
                 <Lighting />
-                <TitleText3d position={[0, 0, 0]}>
+                <TitleText3d position={[0, 0, 0]} scale_divider={10}>
                     {translations.section_about_title}
                 </TitleText3d>
             </Canvas>

@@ -6,7 +6,7 @@ import { useRef } from "react"
 
 
 
-export function TitleText3d ({ position, rotate=true ,children }) {
+export function TitleText3d ({ position, rotate=true, scale_divider=10 ,children }) {
     const { size } = useThree()
     // const ref = useRef()
 
@@ -44,7 +44,7 @@ export function TitleText3d ({ position, rotate=true ,children }) {
                 height={0.5}
                 lineHeight={0.5}
                 letterSpacing={0.06}
-                size={(size.width/100)/10}
+                size={(size.width/100)/scale_divider}
                 font={"/Excon_Black.json"}
             >
                 {children}

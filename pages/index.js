@@ -48,7 +48,7 @@ function Scene({ translations }) {
         <div className='flex w-screen h-[50dvh]'>
             <Canvas shadows orthographic camera={{ position: [0, 0, 100], zoom: 100 }} className='-z-2'>
                 <Lighting />
-                <TitleText3d position={[0, 0, 0]} rotate={false}>
+                <TitleText3d position={[0, 0, 0]} rotate={false} scale_divider={12}>
                     {translations.section_projects_title}
                 </TitleText3d>
             </Canvas>

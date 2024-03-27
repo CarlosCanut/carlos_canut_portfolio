@@ -86,7 +86,7 @@ export default function Project ({ project, project_info, translations }) {
                 </motion.div>
                 <AnimatedTitle
                     text={project_info['title'].toUpperCase()}
-                    className={`text-6xl md:text-8xl font-bold font-ExconBold`}
+                    className={`text-6xl md:text-8xl font-bold font-ExconBold flex self-center justify-self-center`}
                     text_color={project_info['title_color']}
                 />
                 <AnimatedText
