@@ -29,7 +29,7 @@ export async function getServerSideProps ({ params, locale }) {
     const descriptions = {
         "enso": "This project started when I arrived to Japan with a friend to travel for 2 months and we had problems paying in cash only restaurants. We couldn’t find any app to split expenses that was completely free and simple so we decided to build our own in the spare time of the trip.",
         "scoutex": "Humanity is approaching a defining stage in its history: exploration of the universe. Cross-medium design can be used to create an identity for humanity in this context, which is practically applicable for understanding by both humans and extra-terrestrial beings.",
-        "lolpicks": "Humanity is approaching a defining stage in its history: exploration of the universe. Cross-medium design can be used to create an identity for humanity in this context, which is practically applicable for understanding by both humans and extra-terrestrial beings.",
+        "laning_phase": "Humanity is approaching a defining stage in its history: exploration of the universe. Cross-medium design can be used to create an identity for humanity in this context, which is practically applicable for understanding by both humans and extra-terrestrial beings.",
     }
 
 
@@ -71,9 +71,21 @@ export default function Project ({ project, project_info, translations }) {
         </div>
         <section className="w-screen h-[60dvh] pt-[20dvh] flex flex-col items-center justify-center font-ExconMedium text-5xl text-start">
             <div className="w-full h-full flex flex-col items-center justify-center">
-                <Image src={project_info['project_url']} alt={project} width={100} height={100} />
+                <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    transition={{ duration: 0.25 }}
+                >
+                    <Image
+                        src={project_info['project_url']}
+                        alt={project} 
+                        width={100} 
+                        height={100}
+                    />
+                </motion.div>
                 <AnimatedTitle
-                    text={project.toUpperCase()}
+                    text={project_info['title'].toUpperCase()}
                     className={`text-6xl md:text-8xl font-bold font-ExconBold`}
                     text_color={project_info['title_color']}
                 />

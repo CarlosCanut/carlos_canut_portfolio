@@ -44,7 +44,7 @@ export function TitleText3d ({ position, rotate=true ,children }) {
                 height={0.5}
                 lineHeight={0.5}
                 letterSpacing={0.06}
-                size={(size.width/100)/8}
+                size={(size.width/100)/10}
                 font={"/Excon_Black.json"}
             >
                 {children}

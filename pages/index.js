@@ -171,7 +171,7 @@ export default function Home({ translations }) {
                         transition={{ duration: 0.5, ease: [0.2, 0.65, 0.3, 0.9] }}
                         className='w-full flex flex-row justify-start p-8 md:p-0 md:ml-[10dvw]'
                     >
-                        <ProjectCard title={'LOLPICKS'} onClick={() => router.push('/projects/lolpicks')} image_url={'/images/lolpicks.png'} github_link={'https://github.com/CarlosCanut'} />
+                        <ProjectCard title={'LANING PHASE'} onClick={() => router.push('/projects/laning_phase')} image_url={'/images/laning_phase.png'} github_link={'https://github.com/CarlosCanut/laning_phase'} />
                     </motion.div>
                 </div>
             </section>

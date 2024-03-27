@@ -89,5 +89,100 @@
             "title": "Data Analysis",
             "description": "With experience in analysing data towards esports in the highest level, I can analyse and extract data insights."
         }
+    ],
+    "projects": [
+        {
+            "name": "enso",
+            "title": "enso",
+            "year": "(2024)",
+            "services": "[DESIGN, FRONT END]",
+            "clients": "[The World]",
+            "mockup_url": "/images/enso/mockup_enso.png",
+            "project_url": "/images/logos/enso_logo_v2.svg",
+            "github_url": "https://github.com/1dmaol/Enso",
+            "web_url": "https://enso-prototype.onrender.com/",
+            "sections": [
+                {
+                    "title": "THE IDEA",
+                    "subtitle": "[PROJECT ORIGIN]",
+                    "description": "This project started when I arrived to Japan with a friend to travel for 2 months and we had problems paying in cash only restaurants. We couldn’t find any app to split expenses that was completely free and simple so we decided to build our own in the spare time of the trip.",
+                    "image_url": "/images/enso/enso.png"
+                },
+                {
+                    "title": "WHAT IS IT ABOUT",
+                    "subtitle": "[PROJECT INFO]",
+                    "description": "The main purpose of the project was to create a web to split expenses for travelling that generated us $0 in server costs. To achieve this we have created a system that reads a json file and displays the info, being able to save this file cache, your local files or google drive.",
+                    "image_url": "/images/enso/image2.png"
+                },
+                {
+                    "title": "THE LOOKS",
+                    "subtitle": "[PROJECT DESIGN]",
+                    "description": "We wanted the web to follow a design similar to online banks and keeping it as neat and simple as possible, using green as our main colour and follow with a palette of white/grey/black and keeping things clear and easy to find. Just the app we needed for our trip.",
+                    "image_url": "/images/enso/image3.png"
+                }
+            ]
+        },
+        {
+            "name": "scoutex",
+            "title": "scoutex",
+            "year": "(2022)",
+            "services": "[DESIGN, FRONT END, BACK END]",
+            "clients": "[Dignitas, SK Gaming]",
+            "mockup_url": "/images/scoutex/mockup.png",
+            "project_url": "/images/logos/scoutex_logo.svg",
+            "github_url": "https://github.com/1dmaol/Enso",
+            "web_url": "https://enso-prototype.onrender.com/",
+            "sections": [
+                {
+                    "title": "THE IDEA",
+                    "subtitle": "[PROJECT ORIGIN]",
+                    "description": "After competing as player and then switching to staff in League of Legends teams, had the luck of meeting Alejandro Flores, another League of Legends analyst. After discussing for 2 months we decided to create a SAAS app for League of Legends teams that would help them keep track and extract insights of all the training and official games, as well as helping them understand the game to a greater extent.",
+                    "image_url": "/images/scoutex/scoutex.png"
+                },
+                {
+                    "title": "WHAT IS IT ABOUT",
+                    "subtitle": "[PROJECT INFO]",
+                    "description": "This product consists in a tracking system for all the training sessions of the team, as well as keeping track of all oponents and all the other teams in the world so the user (coaches and players) have an advantage and better understanding on what is best to play and what to expect from their oponents.",
+                    "image_url": "/images/scoutex/scoutex.png"
+                },
+                {
+                    "title": "THE LOOKS",
+                    "subtitle": "[PROJECT DESIGN]",
+                    "description": "We wanted a design that looked familiar to the players and coaches, that’s why we chose a dark palette with similar colours as League of Legends. All the pages are divided into filters and selects on top and the information displayed at the bottom, so once they understand how a page works they can get a hand of all of them, making it easy for players that have really limited time to look for information.",
+                    "image_url": "/images/scoutex/scoutex.png"
+                }
+            ]
+        },
+        {
+            "name": "laning_phase",
+            "title": "laning phase",
+            "year": "(2022)",
+            "services": "DESIGN, FRONT END",
+            "clients": "The World",
+            "mockup_url": "/images/enso/mockup_enso.png",
+            "project_url": "/images/logos/laning_phase_logo.svg",
+            "github_url": "https://github.com/CarlosCanut/laning_phase",
+            "web_url": "https://laning-phase.vercel.app/",
+            "sections": [
+                {
+                    "title": "THE IDEA",
+                    "subtitle": "[PROJECT ORIGIN]",
+                    "description": "This project started when I arrived to Japan with a friend to travel for 2 months and we had problems paying in cash only restaurants. We couldn’t find any app to split expenses that was completely free and simple so we decided to build our own in the spare time of the trip.",
+                    "image_url": "/images/laning_phase/image1.png"
+                },
+                {
+                    "title": "WHAT IS IT ABOUT",
+                    "subtitle": "[PROJECT INFO]",
+                    "description": "The main purpose of the project was to create a web to split expenses for travelling that generated us $0 in server costs. To achieve this we have created a system that reads a json file and displays the info, being able to save this file cache, your local files or google drive.",
+                    "image_url": "/images/laning_phase/image2.png"
+                },
+                {
+                    "title": "THE LOOKS",
+                    "subtitle": "[PROJECT DESIGN]",
+                    "description": "We wanted the web to follow a design similar to online banks and keeping it as neat and simple as possible, using green as our main colour and follow with a palette of white/grey/black and keeping things clear and easy to find. Just the app we needed for our trip.",
+                    "image_url": "/images/laning_phase/image3.png"
+                }
+            ]
+        }
     ]
 }

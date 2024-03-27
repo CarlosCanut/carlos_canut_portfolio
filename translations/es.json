@@ -93,6 +93,7 @@
     "projects": [
         {
             "name": "enso",
+            "title": "enso",
             "year": "(2024)",
             "services": "[DISEÑO, FRONT END]",
             "clients": "[EL MUNDO]",
@@ -123,6 +124,7 @@
         },
         {
             "name": "scoutex",
+            "title": "scoutex",
             "year": "(2022)",
             "services": "[DESIGN, FRONT END, BACK END]",
             "clients": "[Dignitas, SK Gaming]",
@@ -150,36 +152,33 @@
             ]
         },
         {
-            "name": "lolpicks",
+            "name": "laning_phase",
+            "title": "laning phase",
             "year": "(2022)",
             "services": "DESIGN, FRONT END",
             "clients": "The World",
             "mockup_url": "/images/enso/mockup_enso.png",
             "project_url": "/images/logos/laning_phase_logo.svg",
+            "github_url": "https://github.com/CarlosCanut/laning_phase",
+            "web_url": "https://laning-phase.vercel.app/",
             "sections": [
                 {
                     "title": "THE IDEA",
                     "subtitle": "[PROJECT ORIGIN]",
                     "description": "This project started when I arrived to Japan with a friend to travel for 2 months and we had problems paying in cash only restaurants. We couldn’t find any app to split expenses that was completely free and simple so we decided to build our own in the spare time of the trip.",
-                    "image_url": "/images/enso/enso.png"
+                    "image_url": "/images/laning_phase/image1.png"
                 },
                 {
                     "title": "WHAT IS IT ABOUT",
                     "subtitle": "[PROJECT INFO]",
                     "description": "The main purpose of the project was to create a web to split expenses for travelling that generated us $0 in server costs. To achieve this we have created a system that reads a json file and displays the info, being able to save this file cache, your local files or google drive.",
-                    "image_url": "/images/enso/image2.png"
+                    "image_url": "/images/laning_phase/image2.png"
                 },
                 {
                     "title": "THE LOOKS",
                     "subtitle": "[PROJECT DESIGN]",
                     "description": "We wanted the web to follow a design similar to online banks and keeping it as neat and simple as possible, using green as our main colour and follow with a palette of white/grey/black and keeping things clear and easy to find. Just the app we needed for our trip.",
-                    "image_url": "/images/enso/image3.png"
-                },
-                {
-                    "title": "THE LOOKS",
-                    "subtitle": "[PROJECT DESIGN]",
-                    "description": "We wanted the web to follow a design similar to online banks and keeping it as neat and simple as possible, using green as our main colour and follow with a palette of white/grey/black and keeping things clear and easy to find. Just the app we needed for our trip.",
-                    "image_url": "/images/enso/image3.png"
+                    "image_url": "/images/laning_phase/image3.png"
                 }
             ]
         }
