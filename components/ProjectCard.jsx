@@ -20,7 +20,7 @@ export function ProjectCard ({ title, onClick, image_url, github_link }) {
                 }
                 {/* <h4 className='font-extralight'>GITHUB</h4> */}
             </div>
-            <AnimatedImage image_url={image_url} onClick={onClick} />
+            <AnimatedImage image_url={image_url} onClick={onClick} className="border border-text border-opacity-25" />
         </div>
     )
 }

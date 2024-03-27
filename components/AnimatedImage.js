@@ -4,7 +4,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 
-const AnimatedImage = ({ image_url, onClick }) => {
+const AnimatedImage = ({ image_url, onClick, className="" }) => {
   const ctrls = useAnimation();
   const { ref, inView } = useInView({
     threshold: 0.5,
@@ -47,7 +47,7 @@ const AnimatedImage = ({ image_url, onClick }) => {
         transition={{ duration: 0.2 }} 
         src={image_url} 
         alt='gallery image placeholder' 
-        className='w-full rounded-3xl opacity-90 cursor-pointer'
+        className={`w-full rounded-3xl opacity-90 cursor-pointer ${className}`}
     />
   );
 };
