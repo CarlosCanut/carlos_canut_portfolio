@@ -125,7 +125,7 @@
         {
             "name": "scoutex",
             "title": "scoutex",
-            "year": "(2022)",
+            "year": "(2022 - 2023)",
             "services": "[DESIGN, FRONT END, BACK END]",
             "clients": "[Dignitas, SK Gaming]",
             "mockup_url": "/images/scoutex/mockup.png",
@@ -154,7 +154,7 @@
         {
             "name": "laning_phase",
             "title": "laning phase",
-            "year": "(2022)",
+            "year": "(2024)",
             "services": "DESIGN, FRONT END",
             "clients": "The World",
             "mockup_url": "/images/enso/mockup_enso.png",
@@ -165,19 +165,25 @@
                 {
                     "title": "THE IDEA",
                     "subtitle": "[PROJECT ORIGIN]",
-                    "description": "This project started when I arrived to Japan with a friend to travel for 2 months and we had problems paying in cash only restaurants. We couldn’t find any app to split expenses that was completely free and simple so we decided to build our own in the spare time of the trip.",
+                    "description": "After two years of working for LEC and LCS teams I decided to focus on creating tools to help people understand the game and get better.",
                     "image_url": "/images/laning_phase/image1.png"
+                },
+                {
+                    "title": "THE STACK",
+                    "subtitle": "[PROJECT TECH STACK]",
+                    "description": "Talking about the technology stack, I decided to use Next.js and React for the frontend and the backend is hosted in Microsoft Azure making use of the Cosmos DB and serverless functions.",
+                    "image_url": "/images/laning_phase/image4.png"
                 },
                 {
                     "title": "WHAT IS IT ABOUT",
                     "subtitle": "[PROJECT INFO]",
-                    "description": "The main purpose of the project was to create a web to split expenses for travelling that generated us $0 in server costs. To achieve this we have created a system that reads a json file and displays the info, being able to save this file cache, your local files or google drive.",
+                    "description": "The project is structured with a main page where you can search for the different tools and articles, each article may or may not have a tool related to it to test the model or algorithm explained in the article.",
                     "image_url": "/images/laning_phase/image2.png"
                 },
                 {
                     "title": "THE LOOKS",
                     "subtitle": "[PROJECT DESIGN]",
-                    "description": "We wanted the web to follow a design similar to online banks and keeping it as neat and simple as possible, using green as our main colour and follow with a palette of white/grey/black and keeping things clear and easy to find. Just the app we needed for our trip.",
+                    "description": "The visual identity of laning phase is based on a minimalistic style and following a similar color palette as other League of Legends platforms. The logo is based on the most common pathing that players follow in the game.",
                     "image_url": "/images/laning_phase/image3.png"
                 }
             ]
