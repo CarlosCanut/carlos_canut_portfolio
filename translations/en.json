@@ -16,6 +16,8 @@
     "about_me_description_1": "Hello, Carlos Canut here, I love creating websites that help and people want to use.",
     "about_me_description_2": "My hobbies are weightlifting and bouldering.",
     "about_me_description_3": "The thing I love the most are coffee shops and travelling everytime I can.",
+    "previous_project_title": "Previous",
+    "next_project_title": "Next",
     "experience_title": "EXPERIENCE",
     "experience": [
         {
@@ -79,15 +81,15 @@
             "description": "Deliver the best experience to clients."
         }
     ],
-    "skillset_title": "SKILLSET",
+    "skillset_title": "PASSIONS",
     "skillset": [
         {
             "title": "Web development",
-            "description": "I plan, design and build scalable web applications."
+            "description": "I love creating pleasant and easy to use experiences for people."
         },
         {
             "title": "Data Analysis",
-            "description": "With experience in analysing data towards esports in the highest level, I can analyse and extract data insights."
+            "description": "Being able to understand data and get insights that can be used to further deliver better products or understand people's behaviour is something that keeps me awake."
         }
     ],
     "projects": [
@@ -95,9 +97,22 @@
             "name": "enso",
             "title": "enso",
             "year": "(2024)",
+            "services_title": "Services",
             "services": "[DESIGN, FRONT END]",
-            "clients": "[The World]",
+            "stack_title": "Stack",
+            "stack": [
+                "/images/logos/react_logo.svg",
+                "/images/logos/threejs_logo.svg",
+                "/images/logos/typescript_logo.svg",
+                "/images/logos/vite_logo.svg",
+                "/images/logos/framer_motion_logo.svg",
+                "/images/logos/tailwind_logo.svg"
+            ],
             "mockup_url": "/images/enso/mockup_enso.png",
+            "previous_index": 2,
+            "next_index": 1,
+            "route_url": "/projects/enso",
+            "title_image": "/images/enso/enso.png",
             "project_url": "/images/logos/enso_logo_v2.svg",
             "github_url": "https://github.com/1dmaol/Enso",
             "web_url": "https://enso-prototype.onrender.com/",
@@ -112,13 +127,13 @@
                     "title": "WHAT IS IT ABOUT",
                     "subtitle": "[PROJECT INFO]",
                     "description": "The main purpose of the project was to create a web to split expenses for travelling that generated us $0 in server costs. To achieve this we have created a system that reads a json file and displays the info, being able to save this file cache, your local files or google drive.",
-                    "image_url": "/images/enso/image2.png"
+                    "image_url": "/images/enso/image3.png"
                 },
                 {
                     "title": "THE LOOKS",
                     "subtitle": "[PROJECT DESIGN]",
                     "description": "We wanted the web to follow a design similar to online banks and keeping it as neat and simple as possible, using green as our main colour and follow with a palette of white/grey/black and keeping things clear and easy to find. Just the app we needed for our trip.",
-                    "image_url": "/images/enso/image3.png"
+                    "image_url": "/images/enso/image4.png"
                 }
             ]
         },
@@ -127,8 +142,19 @@
             "title": "scoutex",
             "year": "(2022 - 2023)",
             "services": "[DESIGN, FRONT END, BACK END]",
-            "clients": "[Dignitas, SK Gaming]",
+            "services_title": "Services",
+            "stack_title": "Stack",
+            "stack": [
+                "/images/logos/next_js_logo.svg",
+                "/images/logos/chakra_ui_logo.png",
+                "/images/logos/react_logo.svg",
+                "/images/logos/azure_logo.svg"
+            ],
             "mockup_url": "/images/scoutex/mockup.png",
+            "previous_index": 0,
+            "next_index": 2,
+            "route_url": "/projects/scoutex",
+            "title_image": "/images/scoutex/scoutex.png",
             "project_url": "/images/logos/scoutex_logo.svg",
             "github_url": "https://github.com/1dmaol/Enso",
             "web_url": "https://enso-prototype.onrender.com/",
@@ -164,8 +190,19 @@
             "title": "laning phase",
             "year": "(2024)",
             "services": "DESIGN, FRONT END",
-            "clients": "The World",
+            "services_title": "Services",
+            "stack_title": "Stack",
+            "stack": [
+                "/images/logos/next_js_logo.svg",
+                "/images/logos/tailwind_logo.svg",
+                "/images/logos/framer_motion_logo.svg",
+                "/images/logos/azure_logo.svg"
+            ],
             "mockup_url": "/images/enso/mockup_enso.png",
+            "previous_index": 1,
+            "next_index": 0,
+            "route_url": "/projects/laning_phase",
+            "title_image": "/images/laning_phase.png",
             "project_url": "/images/logos/laning_phase_logo.svg",
             "github_url": "https://github.com/CarlosCanut/laning_phase",
             "web_url": "https://laning-phase.vercel.app/",

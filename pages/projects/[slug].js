@@ -19,13 +19,16 @@ import ProjectSection from "../../components/ProjectSection";
 import path from 'path'
 import { promises as fs } from 'fs'
 import HeadMenu from "../../components/HeadMenu";
+import { StackContainer } from "../../components/StackContainer";
+import AnimatedImage from "../../components/AnimatedImage";
+import { OtherProjects } from "../../components/OtherProjects";
 
 
 export async function getServerSideProps ({ params, locale }) {
     const { slug } = params;
 
     const project = slug
-
+    
     const descriptions = {
         "enso": "This project started when I arrived to Japan with a friend to travel for 2 months and we had problems paying in cash only restaurants. We couldn’t find any app to split expenses that was completely free and simple so we decided to build our own in the spare time of the trip.",
         "scoutex": "Humanity is approaching a defining stage in its history: exploration of the universe. Cross-medium design can be used to create an identity for humanity in this context, which is practically applicable for understanding by both humans and extra-terrestrial beings.",
@@ -41,17 +44,23 @@ export async function getServerSideProps ({ params, locale }) {
     
     const project_info = translations['projects'].find(item => item['name'] === project)
 
+    const project_index = translations['projects'].indexOf(project_info)
+    const next_project = translations['projects'].find((item, index) => index == project_info['next_index'])
+    const previous_project = translations['projects'].find((item, index) => index == project_info['previous_index'])
+
     return {
         props: {
             project,
             project_info,
             translations,
+            next_project,
+            previous_project
             // description: descriptions[project]
         }
     }
 }
 
-export default function Project ({ project, project_info, translations }) {
+export default function Project ({ project, project_info, translations, next_project, previous_project }) {
 
     return (
         <>
@@ -97,7 +106,7 @@ export default function Project ({ project, project_info, translations }) {
             <div className="w-[90dvw] flex flex-row items-center justify-center">
                 <div className="w-full h-full flex flex-col items-start justify-center font-ExconMedium text-sm md:text-2xl">
                     <AnimatedText
-                        text={"Services"}
+                        text={project_info['services_title']}
                         className={'font-semibold'}
                     />
                     <AnimatedText
@@ -106,14 +115,7 @@ export default function Project ({ project, project_info, translations }) {
                     />
                 </div>
                 <div className="w-full h-full flex flex-col items-end justify-center font-ExconMedium text-sm md:text-2xl">
-                    <AnimatedText
-                        text={"Clients"}
-                        className={'font-semibold'}
-                    />
-                    <AnimatedText
-                        text={project_info['clients']}
-                        className={''}
-                    />
+                    <StackContainer project_info={project_info} project={project} />
                 </div>
             </div>
         </section>
@@ -139,7 +141,10 @@ export default function Project ({ project, project_info, translations }) {
                 />
             )
         })}
-        <section className='flex flex-col w-[90dvw] h-[90dvh] items-start mx-[5dvw] my-[5dvh] p-2'>
+        <section className="flex flex-row w-screen items-start justify-center px-[5dvw] my-[15dvh] border-t pt-12">
+            <OtherProjects translations={translations} previous_project={previous_project} next_project={next_project} />
+        </section>
+        <section className='flex flex-col w-[90dvw] h-[90dvh] items-start justify-start mx-[5dvw] my-[5dvh] p-2'>
             <AboutSection translations={translations} />
         </section>
         </>
