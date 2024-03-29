@@ -86,33 +86,33 @@ export default function Project ({ project, project_info, translations }) {
                 </motion.div>
                 <AnimatedTitle
                     text={project_info['title'].toUpperCase()}
-                    className={`text-6xl md:text-8xl font-bold font-ExconBold flex self-center justify-self-center`}
+                    className={`text-4xl md:text-8xl font-bold font-ExconBold flex self-center justify-self-center`}
                     text_color={project_info['title_color']}
                 />
                 <AnimatedText
                     text={project_info['year']}
-                    className={`text-4xl md:text-6xl font-ExconRegular`}
+                    className={`text-2xl md:text-6xl font-ExconRegular`}
                 />
             </div>
             <div className="w-[90dvw] flex flex-row items-center justify-center">
-                <div className="w-full h-full flex flex-col items-start justify-center font-ExconMedium">
+                <div className="w-full h-full flex flex-col items-start justify-center font-ExconMedium text-sm md:text-2xl">
                     <AnimatedText
                         text={"Services"}
-                        className={'text-lg md:text-2xl'}
+                        className={'font-semibold'}
                     />
                     <AnimatedText
                         text={project_info['services']}
-                        className={'text-lg md:text-2xl'}
+                        className={''}
                     />
                 </div>
-                <div className="w-full h-full flex flex-col items-end justify-center font-ExconMedium">
+                <div className="w-full h-full flex flex-col items-end justify-center font-ExconMedium text-sm md:text-2xl">
                     <AnimatedText
                         text={"Clients"}
-                        className={'text-lg md:text-2xl'}
+                        className={'font-semibold'}
                     />
                     <AnimatedText
                         text={project_info['clients']}
-                        className={'text-lg md:text-2xl'}
+                        className={''}
                     />
                 </div>
             </div>

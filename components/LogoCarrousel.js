@@ -19,8 +19,8 @@ export function LogoCarrousel ({src, ...props}) {
         
     return (
         <div className="flex flex-col md:flex-row h-full md:h-1/3 w-1/3 md:w-full place-content-evenly">
-            <img src='/svg/disney.svg' alt={'Disney logo'} width={size} height={size} />
             <img src='/svg/swarovski.svg' alt={'Swarovski logo'} width={size} height={size} />
+            <img src='/svg/disney.svg' alt={'Disney logo'} width={size} height={size} />
             <img src='/svg/zero_tenacity.svg' alt={'Zero Tenacity logo'} width={size} height={size} />
             <img src='/svg/dignitas.svg' alt={'Dignitas logo'} width={size} height={size} />
             <img src='/svg/infinity.svg' alt={'Infinity logo'} width={size} height={size} />

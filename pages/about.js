@@ -108,7 +108,7 @@ export default function About({ translations }) {
                     <div className='w-full flex flex-row items-start pt-4'>
                         {/* esports team list */}
                         <Timeline />
-                        <ul className='w-10/12 flex flex-col gap-12 sm:gap-24 mt-12'>
+                        <ul className='w-10/12 flex flex-col gap-20 sm:gap-24 mt-12'>
                             {translations.experience.map((item, index) => {
                                 return (
                                     <ExperienceCard key={index} position={item.role} company={item.company} duration={item.duration} description={item.description} />
