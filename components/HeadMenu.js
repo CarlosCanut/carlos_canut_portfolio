@@ -12,7 +12,7 @@ const HeadMenu = ({ translations }) => {
       <nav className='z-50 fixed flex w-screen h-[5dvh] top-[5dvh] right-0 left-0 justify-center'>
         <ul className='flex flex-row items-start justify-between w-[90dvw] font-ExconRegular'>
           <li>
-            <Link className='order-1' href="/">
+            <Link className='order-1 font-bold' href="/">
               <AnimatedTitle
                   text="Carlos Canut"
                   className=""

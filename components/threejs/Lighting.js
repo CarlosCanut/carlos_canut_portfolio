@@ -10,7 +10,7 @@ import { useControls } from 'leva'
 export function Lighting () {
   return (
     <>
-      <color attach="background" args={['#070B1B']} />
+      <color attach="background" args={['#0B0A0B']} />
       <ambientLight intensity={0.4} />
       <spotLight position={[10, 10, 0]} angle={0.45} penumbra={1} intensity={10} castShadow />
       <spotLight position={[-10, -10, -10]} angle={-0.45} penumbra={1} intensity={10} castShadow />

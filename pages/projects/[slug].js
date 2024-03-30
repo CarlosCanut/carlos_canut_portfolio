@@ -38,7 +38,8 @@ export async function getServerSideProps ({ params, locale }) {
 
 
     const jsonDirectory = path.join(process.cwd(), 'translations')
-    const translationsRaw = await fs.readFile(jsonDirectory + `/${locale}.json`, 'utf8')
+    // const translationsRaw = await fs.readFile(jsonDirectory + `/${locale}.json`, 'utf8')
+    const translationsRaw = await fs.readFile(jsonDirectory + `/en.json`, 'utf8')
     const translations = JSON.parse(translationsRaw)
 
     
@@ -144,7 +145,7 @@ export default function Project ({ project, project_info, translations, next_pro
         <section className="flex flex-row w-screen items-start justify-center px-[5dvw] my-[15dvh] border-t pt-12">
             <OtherProjects translations={translations} previous_project={previous_project} next_project={next_project} />
         </section>
-        <section className='flex flex-col w-[90dvw] h-[90dvh] items-start justify-start mx-[5dvw] my-[5dvh] p-2'>
+        <section className='flex flex-col w-screen items-start justify-start mt-24'>
             <AboutSection translations={translations} />
         </section>
         </>

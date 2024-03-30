@@ -23,7 +23,7 @@ export default function ProjectSection ({ title, subtitle, description, image_ur
                         />
                         <AnimatedText
                             text={description}
-                            className={'text-lg w-full md:w-2/3 font-ExconMedium'}
+                            className={'text-lg w-full md:w-2/3 font-ExconLight'}
                         />
                     </div>
                 </div>

@@ -10,7 +10,7 @@ export function ProjectCard ({ title, onClick, image_url, github_link }) {
                 {/* <h2 className='font-ExconBold text-6xl font-extrabold'>ENSO</h2> */}
                 <AnimatedTitle
                     text={title}
-                    className="font-ExconBold text-4xl sm:text-6xl font-extrabold"
+                    className="font-ExconBold text-4xl sm:text-6xl font-semibold"
                 />
                 {github_link.length > 0 &&
                     <AnimatedTitle

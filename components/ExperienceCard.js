@@ -23,7 +23,7 @@ export default function ExperienceCard ({ position, company, description, durati
                     />
                     <AnimatedText
                         text={description}
-                        className={'text-xs sm:text-lg font-ExconRegular'}
+                        className={'text-xs sm:text-lg font-extralight font-ExconRegular'}
                     />
                 </div>
             </li>

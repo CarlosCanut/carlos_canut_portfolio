@@ -1,10 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  i18n: {
-    locales: ['en', 'es', 'jp'],
-    defaultLocale: 'en'
-  },
+  // i18n: {
+  //   locales: ['en', 'es', 'jp'],
+  //   defaultLocale: 'en'
+  // },
   webpack (config, { isServer }) {
     // Allow importing of shader files (e.g. `.glsl` -- filenames below)
     // @see: https://github.com/glslify/glslify-loader

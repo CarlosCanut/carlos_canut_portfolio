@@ -1,7 +1,7 @@
 import { Suspense, createContext, useContext, useEffect, useMemo, useState } from 'react'
 
 import * as THREE from 'three'
-import { Scroll, ScrollControls, Html, Environment, Instances, Instance, MeshTransmissionMaterial, Lightformer, Float, Points, PointMaterial, MeshDistortMaterial, Sphere, OrbitControls, Center, Text3D, Plane, Sparkles, SpotLight } from '@react-three/drei'
+import { Scroll, ScrollControls, Html, Environment, Instances, Instance, MeshTransmissionMaterial, Lightformer, Float, Points, PointMaterial, MeshDistortMaterial, Sphere, OrbitControls, Center, Text3D, Plane, Sparkles, SpotLight, Torus } from '@react-three/drei'
 import { Canvas, useFrame, useThree, extend } from '@react-three/fiber'
 import { motion, useScroll, useSpring } from 'framer-motion'
 import path from 'path'
@@ -31,7 +31,8 @@ const AnimatedMaterial = a(MeshDistortMaterial)
 export async function getStaticProps({ locale }) {
 
     const jsonDirectory = path.join(process.cwd(), 'translations')
-    const translationsRaw = await fs.readFile(jsonDirectory + `/${locale}.json`, 'utf8')
+    // const translationsRaw = await fs.readFile(jsonDirectory + `/${locale}.json`, 'utf8')
+    const translationsRaw = await fs.readFile(jsonDirectory + `/en.json`, 'utf8')
     const translations = JSON.parse(translationsRaw)
 
     return {
@@ -41,16 +42,43 @@ export async function getStaticProps({ locale }) {
     }
 }
 
+function Background_torus() {
+    const { size } = useThree()
+
+    var torus_scaler = 1
+    
+    if (size.width < 700) {
+        torus_scaler = size.width/750
+    } else {
+        torus_scaler = size.width/1250
+    }
+
+    console.log("size.width: ", size.width)
+    console.log(1 * size.width/1000)
+    return (
+        <mesh receiveShadow castShadow position={[0, 0, -4]}>
+            <torusGeometry args={[2 * torus_scaler, 1 * torus_scaler, 24, 64]} />
+            <MeshTransmissionMaterial backside backsideThickness={0} thickness={2} roughness={0} anisotropicBlur={0.1} />
+        </mesh>
+    )
+}
 
 function Scene({ translations }) {
 
     return (
-        <div className='flex w-screen h-[50dvh]'>
+        <div className='flex w-full h-full -z-1'>
             <Canvas shadows orthographic camera={{ position: [0, 0, 100], zoom: 100 }} className='-z-2'>
                 <Lighting />
-                <TitleText3d position={[0, 0, 0]} rotate={false} scale_divider={12}>
+                {/* <TitleText3d position={[0, 0, 0]} rotate={false} scale_divider={12}>
                     {translations.section_projects_title}
+                </TitleText3d> */}
+                <TitleText3d position={[0, -0.1, 0]} rotate={false} scale_divider={12}>
+                    {translations.main_title_1 + '\n\n' + translations.main_title_2}
                 </TitleText3d>
+                <Background_torus />
+                {/* <TitleText3d position={[0, -0.5, 0]} rotate={false} scale_divider={12}>
+                    {translations.main_title_2}
+                </TitleText3d> */}
             </Canvas>
         </div>
     )
@@ -65,8 +93,9 @@ export default function Home({ translations }) {
                 <HeadMenu translations={translations} />
                 <HeadMenuExtra translations={translations} />
             </div>
-            <section className='flex flex-col md:flex-row w-[90dvw] h-screen justify-center items-center mx-[5dvw] gap-8'>
-                <motion.div
+            <section className='flex w-screen h-screen justify-center items-center'>
+                <Scene translations={translations} />
+                {/* <motion.div
                     className='flex flex-col w-[65dvw] md:h-full mt-[50dvh] md:mt-[100dvh] items-start justify-start font-ExconBold text-2xl sm:text-4xl md:text-6xl lg:text-8xl'
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -131,11 +160,16 @@ export default function Home({ translations }) {
                     >
                         Email
                     </motion.h3>
-                </motion.div>
+                </motion.div> */}
             </section>
 
-            <section className='flex flex-col w-[100dvw] h-[50dvh] justify-center items-center'>
-                <Scene translations={translations} />
+            <section className='flex flex-col w-screen justify-center items-center mb-[5dvh] mt-[25dvh]'>
+                {/* <Scene translations={translations} /> */}
+                <AnimatedTitle
+                    text={translations.section_projects_title}
+                    className="font-ExconBlack font-bold text-6xl md:text-9xl"
+                    mainTitle={true}
+                />
             </section>
 
 
@@ -180,7 +214,7 @@ export default function Home({ translations }) {
 
 
 
-            <section className='flex flex-col w-[90dvw] h-[90dvh] items-start justify-start mx-[5dvw] my-[5dvh]'>
+            <section className='flex flex-col w-screen items-start justify-start mt-24'>
                 <AboutSection translations={translations} />
             </section>
         </>

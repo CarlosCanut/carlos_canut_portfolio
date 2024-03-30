@@ -34,7 +34,8 @@ import { LogoCarrousel } from '../components/LogoCarrousel'
 export async function getStaticProps({ locale }) {
 
     const jsonDirectory = path.join(process.cwd(), 'translations')
-    const translationsRaw = await fs.readFile(jsonDirectory + `/${locale}.json`, 'utf8')
+    // const translationsRaw = await fs.readFile(jsonDirectory + `/${locale}.json`, 'utf8')
+    const translationsRaw = await fs.readFile(jsonDirectory + `/en.json`, 'utf8')
     const translations = JSON.parse(translationsRaw)
 
     return {
@@ -119,7 +120,7 @@ export default function About({ translations }) {
                 </div>
             </section>
 
-            <section className='flex flex-col w-[90dvw] items-start mx-[5dvw] my-[5dvh] py-2'>
+            <section className='flex flex-col w-[90dvw] items-start mx-[5dvw] mt-[5dvh] py-12'>
                 <div className='w-full border-t-2 flex flex-col pt-4 font-ExconMedium'>
                     {/* <h2 className='h-full w-1/3'>SKILLSET</h2> */}
                     <AnimatedTitle
@@ -138,11 +139,13 @@ export default function About({ translations }) {
                                     <span>
                                         <AnimatedText
                                             text={item.title}
+                                            className={""}
                                         />
                                         <br />
                                         <br />
                                         <AnimatedText
                                             text={item.description}
+                                            className={"font-extralight font-ExconRegular"}
                                         />
                                     </span>
                                 </div>
@@ -152,7 +155,7 @@ export default function About({ translations }) {
                 </div>
             </section>
 
-            <section className='flex flex-col w-[90dvw] items-start mx-[5dvw] my-[5dvh]'>
+            <section className='flex flex-col w-screen items-start justify-start'>
                 <AboutSection translations={translations} />
             </section>
         </>
