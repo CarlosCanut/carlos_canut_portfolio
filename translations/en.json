@@ -156,7 +156,7 @@
                 "/images/logos/react_logo.svg",
                 "/images/logos/azure_logo.svg"
             ],
-            "mockup_url": "/images/scoutex/mockup.png",
+            "mockup_url": "/images/scoutex/mockup_desktop.png",
             "previous_index": 0,
             "next_index": 2,
             "route_url": "/projects/scoutex",
