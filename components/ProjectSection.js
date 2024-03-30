@@ -7,7 +7,7 @@ export default function ProjectSection ({ title, subtitle, description, image_ur
     return (
         <>
             <section className={`w-screen flex items-center justify-start my-[15dvh]`}>
-                <div className=" w-full md:w-[70dvw] ml-[10dvw] md:ml-[25dvw] mr-[5dvw] flex flex-col items-top justify-start gap-24">
+                <div className=" w-full md:w-[70dvw] ml-[10dvw] md:ml-[25dvw] mr-[5dvw] flex flex-col items-top justify-start gap-12">
                     <div className="flex flex-row gap-4 items-center text-4xl md:text-7xl text-start text-white font-ExconMedium font-bold">
                         <h2>
                             <AnimatedTitle

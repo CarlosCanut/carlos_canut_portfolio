@@ -108,11 +108,11 @@
                 "/images/logos/framer_motion_logo.svg",
                 "/images/logos/tailwind_logo.svg"
             ],
-            "mockup_url": "/images/enso/mockup_enso.png",
+            "mockup_url": "/images/enso/mockup_desktop.png",
             "previous_index": 2,
             "next_index": 1,
             "route_url": "/projects/enso",
-            "title_image": "/images/enso/enso.png",
+            "title_image": "/images/enso/mockup_desktop.png",
             "project_url": "/images/logos/enso_logo_v2.svg",
             "github_url": "https://github.com/1dmaol/Enso",
             "web_url": "https://enso-prototype.onrender.com/",
@@ -134,6 +134,12 @@
                     "subtitle": "[PROJECT DESIGN]",
                     "description": "We wanted the web to follow a design similar to online banks and keeping it as neat and simple as possible, using green as our main colour and follow with a palette of white/grey/black and keeping things clear and easy to find. Just the app we needed for our trip.",
                     "image_url": "/images/enso/image4.png"
+                },
+                {
+                    "title": "THE AFTERLIFE",
+                    "subtitle": "[PROJECT CONCLUSION]",
+                    "description": "After completing the project, the objective of creating an all free app to help people organize their expenses was achieved, and we being the first happy users was a really fulfilling goal.",
+                    "image_url": "/images/enso/image2.png"
                 }
             ]
         },
@@ -154,7 +160,7 @@
             "previous_index": 0,
             "next_index": 2,
             "route_url": "/projects/scoutex",
-            "title_image": "/images/scoutex/scoutex.png",
+            "title_image": "/images/scoutex/mockup_desktop.png",
             "project_url": "/images/logos/scoutex_logo.svg",
             "github_url": "https://github.com/1dmaol/Enso",
             "web_url": "https://enso-prototype.onrender.com/",
@@ -178,9 +184,9 @@
                     "image_url": "/images/scoutex/image15.png"
                 },
                 {
-                    "title": "THE LOOKS",
-                    "subtitle": "[PROJECT DESIGN]",
-                    "description": "We wanted a design that looked familiar to the players and coaches, that’s why we chose a dark palette with similar colours as League of Legends. All the pages are divided into filters and selects on top and the information displayed at the bottom, so once they understand how a page works they can get a hand of all of them, making it easy for players that have really limited time to look for information.",
+                    "title": "THE AFTERLIFE",
+                    "subtitle": "[PROJECT CONCLUSION]",
+                    "description": "After 2 years of using this platform with teams of the highest level, we can conclude that using this platform reduced the amount of time used to research for information in game preparation on average a 25% of the time it used to take without it.",
                     "image_url": "/images/scoutex/image16.png"
                 }
             ]
@@ -189,7 +195,7 @@
             "name": "laning_phase",
             "title": "laning phase",
             "year": "(2024)",
-            "services": "DESIGN, FRONT END",
+            "services": "[DESIGN, FRONT END, BACK END]",
             "services_title": "Services",
             "stack_title": "Stack",
             "stack": [
@@ -198,11 +204,11 @@
                 "/images/logos/framer_motion_logo.svg",
                 "/images/logos/azure_logo.svg"
             ],
-            "mockup_url": "/images/enso/mockup_enso.png",
+            "mockup_url": "/images/laning_phase/mockup_desktop.png",
             "previous_index": 1,
             "next_index": 0,
             "route_url": "/projects/laning_phase",
-            "title_image": "/images/laning_phase.png",
+            "title_image": "/images/laning_phase/mockup_desktop.png",
             "project_url": "/images/logos/laning_phase_logo.svg",
             "github_url": "https://github.com/CarlosCanut/laning_phase",
             "web_url": "https://laning-phase.vercel.app/",

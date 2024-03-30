@@ -45,20 +45,21 @@ export async function getStaticProps({ locale }) {
 function Background_torus() {
     const { size } = useThree()
 
-    var torus_scaler = 1
+    var torus_radius = 1
+    var torus_tube = 1
     
     if (size.width < 700) {
-        torus_scaler = size.width/750
+        torus_radius = size.width/750
+        torus_tube = size.width/650
     } else {
-        torus_scaler = size.width/1250
+        torus_radius = size.width/1250
+        torus_tube = size.width/1250
     }
-
-    console.log("size.width: ", size.width)
-    console.log(1 * size.width/1000)
+    
     return (
         <mesh receiveShadow castShadow position={[0, 0, -4]}>
-            <torusGeometry args={[2 * torus_scaler, 1 * torus_scaler, 24, 64]} />
-            <MeshTransmissionMaterial backside backsideThickness={0} thickness={2} roughness={0} anisotropicBlur={0.1} />
+            <torusGeometry args={[2 * torus_radius, 1 * torus_tube, 24, 64]} />
+            <MeshTransmissionMaterial backside backsideThickness={0} thickness={5} roughness={0} anisotropicBlur={0.1} />
         </mesh>
     )
 }
