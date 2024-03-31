@@ -19,7 +19,7 @@ export function OtherProjects ({ translations, previous_project, next_project, o
                         className="font-extralight font-ExconRegular text-xs sm:text-md"
                     />
                 </div>
-                <AnimatedImage image_url={previous_project['title_image']} onClick={() => router.push(previous_project['route_url'])} className="border border-text border-opacity-25 rounded-xl sm:rounded-3xl" />
+                <AnimatedImage image_url={previous_project['title_image']} url={previous_project['route_url']} className="border border-text border-opacity-25 rounded-xl sm:rounded-3xl" />
             </div>
             <div className="w-2/5 flex flex-col items-start justify-center gap-2">
                 <div className="flex flex-row items-end justify-start">
@@ -32,7 +32,7 @@ export function OtherProjects ({ translations, previous_project, next_project, o
                         className="font-extralight font-ExconRegular text-xs sm:text-md"
                     />
                 </div>
-                <AnimatedImage image_url={next_project['title_image']} onClick={() => router.push(next_project['route_url'])} className="border border-text border-opacity-25 rounded-xl sm:rounded-3xl" />
+                <AnimatedImage image_url={next_project['title_image']} url={next_project['route_url']} className="border border-text border-opacity-25 rounded-xl sm:rounded-3xl" />
             </div>
         </>
     )

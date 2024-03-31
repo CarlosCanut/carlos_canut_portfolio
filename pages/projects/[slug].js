@@ -24,16 +24,30 @@ import AnimatedImage from "../../components/AnimatedImage";
 import { OtherProjects } from "../../components/OtherProjects";
 
 
-export async function getServerSideProps ({ params, locale }) {
+export async function getStaticPaths () {
+    const paths = [
+        {
+            params: { slug: 'enso' },
+        },
+        {
+            params: { slug: 'scoutex' },
+        },
+        {
+            params: { slug: 'laning_phase' },
+        }
+    ]
+
+    return {
+        paths,
+        fallback: false
+    }
+}
+
+export async function getStaticProps ({ params, locale }) {
     const { slug } = params;
 
     const project = slug
     
-    const descriptions = {
-        "enso": "This project started when I arrived to Japan with a friend to travel for 2 months and we had problems paying in cash only restaurants. We couldn’t find any app to split expenses that was completely free and simple so we decided to build our own in the spare time of the trip.",
-        "scoutex": "Humanity is approaching a defining stage in its history: exploration of the universe. Cross-medium design can be used to create an identity for humanity in this context, which is practically applicable for understanding by both humans and extra-terrestrial beings.",
-        "laning_phase": "Humanity is approaching a defining stage in its history: exploration of the universe. Cross-medium design can be used to create an identity for humanity in this context, which is practically applicable for understanding by both humans and extra-terrestrial beings.",
-    }
 
 
 
@@ -69,7 +83,7 @@ export default function Project ({ project, project_info, translations, next_pro
             <HeadMenu translations={translations} />
             <HeadMenuExtra translations={translations} />
         </header>
-        <div className='z-50 fixed flex w-screen top-[86dvh] right-0 left-0 justify-center'>
+        <div className='z-50 fixed flex w-screen top-[86vh] right-0 left-0 justify-center'>
             <div className='flex flex-row items-center justify-center gap-2 px-2 py-2 left-[20dvw] rounded-2xl bg-primary bg-opacity-25'>
                 <span onClick={() => window.open(project_info['github_url'], '_blank')} className="px-4 py-2 rounded-2xl border border-secondary bg-background drop-shadow-2xl cursor-pointer hover:bg-accent">
                     Github
@@ -79,7 +93,7 @@ export default function Project ({ project, project_info, translations, next_pro
                 </span>
             </div>
         </div>
-        <section className="w-screen h-[60dvh] pt-[20dvh] flex flex-col items-center justify-center font-ExconMedium text-5xl text-start">
+        <section className="w-screen h-[60vh] pt-[20vh] flex flex-col items-center justify-center font-ExconMedium text-5xl text-start">
             <div className="w-full h-full flex flex-col items-center justify-center">
                 <motion.div
                     initial={{ opacity: 0, y: 10 }}
@@ -120,7 +134,7 @@ export default function Project ({ project, project_info, translations, next_pro
                 </div>
             </div>
         </section>
-        <section className="w-screen h-screen mt-[10dvh] flex flex-col items-center justify-center font-ExconMedium text-2xl md:text-5xl text-start">
+        <section className="w-screen h-screen mt-[10vh] flex flex-col items-center justify-center font-ExconMedium text-2xl md:text-5xl text-start">
             <motion.img
                 src={project_info['mockup_url']}
                 alt={`${project} landing page`}
@@ -142,7 +156,7 @@ export default function Project ({ project, project_info, translations, next_pro
                 />
             )
         })}
-        <section className="flex flex-row w-screen items-start justify-center px-[5dvw] my-[15dvh] border-t pt-12">
+        <section className="flex flex-row w-screen items-start justify-center px-[5dvw] my-[15vh] border-t pt-12">
             <OtherProjects translations={translations} previous_project={previous_project} next_project={next_project} />
         </section>
         <section className='flex flex-col w-screen items-start justify-start mt-24'>

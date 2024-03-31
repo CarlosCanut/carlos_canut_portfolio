@@ -3,8 +3,12 @@ import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
-const AnimatedImage = ({ image_url, onClick, className="" }) => {
+const AnimatedImage = ({ image_url, url, className="" }) => {
+  const router = useRouter()
+  
   const ctrls = useAnimation();
   const { ref, inView } = useInView({
     threshold: 0.5,
@@ -35,20 +39,25 @@ const AnimatedImage = ({ image_url, onClick, className="" }) => {
   };
 
   return (
-
-    <motion.img 
-        onClick={onClick}
-        ref={ref}
-        initial="hidden"
-        exit="hidden"
-        animate={ctrls}
-        variants={imageAnimation}
-        whileHover={{ scale: 0.975 }} 
-        transition={{ duration: 0.2 }} 
-        src={image_url} 
-        alt='gallery image placeholder' 
-        className={`w-full rounded-3xl opacity-90 cursor-pointer ${className}`}
-    />
+    <Link
+      href={url}
+      className="cursor-pointer"
+    >
+      <motion.img
+          // href={url}
+          // onClick={() => router.push(url)}
+          ref={ref}
+          initial="hidden"
+          exit="hidden"
+          animate={ctrls}
+          variants={imageAnimation}
+          whileHover={{ scale: 0.975 }} 
+          transition={{ duration: 0.2 }} 
+          src={image_url} 
+          alt='gallery image placeholder' 
+          className={`w-full rounded-3xl opacity-90 ${className}`}
+      />
+    </Link>
   );
 };
 

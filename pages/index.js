@@ -45,6 +45,13 @@ export async function getStaticProps({ locale }) {
 function Background_torus() {
     const { size } = useThree()
 
+    const torusRef = useRef()
+
+    useFrame(() => {
+        torusRef.current.rotation.x += 0.01
+        torusRef.current.rotation.y += 0.01
+    })
+
     var torus_radius = 1
     var torus_tube = 1
     
@@ -57,7 +64,7 @@ function Background_torus() {
     }
     
     return (
-        <mesh receiveShadow castShadow position={[0, 0, -4]}>
+        <mesh ref={torusRef} receiveShadow castShadow position={[0, 0, -4]}>
             <torusGeometry args={[2 * torus_radius, 1 * torus_tube, 24, 64]} />
             <MeshTransmissionMaterial backside backsideThickness={0} thickness={5} roughness={0} anisotropicBlur={0.1} />
         </mesh>
@@ -97,7 +104,7 @@ export default function Home({ translations }) {
             <section className='flex w-screen h-screen justify-center items-center'>
                 <Scene translations={translations} />
                 {/* <motion.div
-                    className='flex flex-col w-[65dvw] md:h-full mt-[50dvh] md:mt-[100dvh] items-start justify-start font-ExconBold text-2xl sm:text-4xl md:text-6xl lg:text-8xl'
+                    className='flex flex-col w-[65dvw] md:h-full mt-[50vh] md:mt-[100vh] items-start justify-start font-ExconBold text-2xl sm:text-4xl md:text-6xl lg:text-8xl'
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
@@ -114,7 +121,7 @@ export default function Home({ translations }) {
                     />
                 </motion.div>
                 <motion.div
-                    className='flex flex-col w-[25dvw] h-full mt-0 md:mt-[100dvh] items-start justify-start text-2xl font-ExconMedium sm:text-2xl md:text-2xl'
+                    className='flex flex-col w-[25dvw] h-full mt-0 md:mt-[100vh] items-start justify-start text-2xl font-ExconMedium sm:text-2xl md:text-2xl'
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
@@ -164,7 +171,7 @@ export default function Home({ translations }) {
                 </motion.div> */}
             </section>
 
-            <section className='flex flex-col w-screen justify-center items-center mb-[5dvh] mt-[25dvh]'>
+            <section className='flex flex-col w-screen justify-center items-center mb-[5vh] mt-[25vh]'>
                 {/* <Scene translations={translations} /> */}
                 <AnimatedTitle
                     text={translations.section_projects_title}
@@ -184,7 +191,7 @@ export default function Home({ translations }) {
                         transition={{ duration: 0.5, ease: [0.2, 0.65, 0.3, 0.9] }}
                         className='w-full flex flex-row justify-start p-8 md:p-0 md:ml-[10dvw]'
                     >
-                        <ProjectCard title={'ENSO'} onClick={() => router.push('/projects/enso')} image_url={'/images/enso/enso.png'} github_link={'https://github.com/CarlosCanut'} />
+                        <ProjectCard title={'ENSO'} url={'/projects/enso'} image_url={'/images/enso/enso.png'} github_link={'https://github.com/CarlosCanut'} />
                     </motion.div>
                 </div>
                 <div className='flex flex-col w-full items-center hover:ease-in'>
@@ -195,7 +202,7 @@ export default function Home({ translations }) {
                         transition={{ duration: 0.5, ease: [0.2, 0.65, 0.3, 0.9] }}
                         className='w-full flex flex-row justify-end p-8 md:p-0 md:mr-[10dvw]'
                     >
-                        <ProjectCard title={'SCOUTEX'} onClick={() => router.push('/projects/scoutex')} image_url={'/images/scoutex/scoutex.png'} github_link={''} />
+                        <ProjectCard title={'SCOUTEX'}  url={'/projects/enso'} image_url={'/images/scoutex/scoutex.png'} github_link={''} />
                     </motion.div>
                 </div>
                 <div className='flex flex-col w-full items-center hover:ease-in'>
@@ -206,7 +213,7 @@ export default function Home({ translations }) {
                         transition={{ duration: 0.5, ease: [0.2, 0.65, 0.3, 0.9] }}
                         className='w-full flex flex-row justify-start p-8 md:p-0 md:ml-[10dvw]'
                     >
-                        <ProjectCard title={'LANING PHASE'} onClick={() => router.push('/projects/laning_phase')} image_url={'/images/laning_phase.png'} github_link={'https://github.com/CarlosCanut/laning_phase'} />
+                        <ProjectCard title={'LANING PHASE'}  url={'/projects/laning_phase'} image_url={'/images/laning_phase.png'} github_link={'https://github.com/CarlosCanut/laning_phase'} />
                     </motion.div>
                 </div>
             </section>

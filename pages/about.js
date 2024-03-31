@@ -49,7 +49,7 @@ export async function getStaticProps({ locale }) {
 function Scene({ translations }) {
 
     return (
-        <div className='flex w-full h-full md:h-[60dvh]'>
+        <div className='flex w-full h-full md:h-[60vh]'>
             <Canvas shadows dpr={[1, 1.5]} gl={{ antialias: false }} camera={{ position: [0, 0, 14], fov: 17.5, near: 1, far: 20 }} className='-z-2 '>
                 <Lighting />
                 <TitleText3d position={[0, 0, 0]} scale_divider={10}>
@@ -69,11 +69,11 @@ export default function About({ translations }) {
                 <HeadMenu translations={translations} />
                 <HeadMenuExtra translations={translations} />
             </div>
-            <section className='flex flex-row md:flex-col mt-[15dvh] mx-[5dvw] w-[90dvw] h-[85dvh] justify-center items-center'>
+            <section className='flex flex-row md:flex-col mt-[15vh] mx-[5dvw] w-[90dvw] h-[85vh] justify-center items-center'>
                 <Scene translations={translations} />
                 <LogoCarrousel />
             </section>
-            {/* <section className='flex flex-wrap w-screen h-[35dvh] place-content-evenly items-center'>
+            {/* <section className='flex flex-wrap w-screen h-[35vh] place-content-evenly items-center'>
                 <LogoCarrousel />
             </section> */}
             <section className='flex flex-col w-[90dvw] items-start mx-[5dvw]'>
@@ -120,7 +120,7 @@ export default function About({ translations }) {
                 </div>
             </section>
 
-            <section className='flex flex-col w-[90dvw] items-start mx-[5dvw] mt-[5dvh] py-12'>
+            <section className='flex flex-col w-[90dvw] items-start mx-[5dvw] mt-[5vh] py-12'>
                 <div className='w-full border-t-2 flex flex-col pt-4 font-ExconMedium'>
                     {/* <h2 className='h-full w-1/3'>SKILLSET</h2> */}
                     <AnimatedTitle

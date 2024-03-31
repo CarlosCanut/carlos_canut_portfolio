@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import AnimatedTitle from "./AnimatedTitle";
 import AnimatedImage from './AnimatedImage';
 
-export function ProjectCard ({ title, onClick, image_url, github_link }) {
+export function ProjectCard ({ title, url, image_url, github_link }) {
 
     return (
         <div className='w-full md:w-[60vw] flex flex-col'>
@@ -20,7 +20,7 @@ export function ProjectCard ({ title, onClick, image_url, github_link }) {
                 }
                 {/* <h4 className='font-extralight'>GITHUB</h4> */}
             </div>
-            <AnimatedImage image_url={image_url} onClick={onClick} className="border border-text border-opacity-25" />
+            <AnimatedImage image_url={image_url} url={url} className="border border-text border-opacity-25" />
         </div>
     )
 }
