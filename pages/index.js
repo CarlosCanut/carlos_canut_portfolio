@@ -202,7 +202,7 @@ export default function Home({ translations }) {
                         transition={{ duration: 0.5, ease: [0.2, 0.65, 0.3, 0.9] }}
                         className='w-full flex flex-row justify-end p-8 md:p-0 md:mr-[10dvw]'
                     >
-                        <ProjectCard title={'SCOUTEX'}  url={'/projects/enso'} image_url={'/images/scoutex/scoutex.png'} github_link={''} />
+                        <ProjectCard title={'SCOUTEX'}  url={'/projects/scoutex'} image_url={'/images/scoutex/scoutex.png'} github_link={''} />
                     </motion.div>
                 </div>
                 <div className='flex flex-col w-full items-center hover:ease-in'>
