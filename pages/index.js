@@ -48,8 +48,8 @@ function Background_torus() {
     const torusRef = useRef()
 
     useFrame(() => {
-        torusRef.current.rotation.x += 0.01
-        torusRef.current.rotation.y += 0.01
+        torusRef.current.rotation.x += 0.005
+        torusRef.current.rotation.y += 0.005
     })
 
     var torus_radius = 1
